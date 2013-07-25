@@ -5,7 +5,7 @@
 	<xsl:template name="footer">
 		<div class="container">
 			<footer class="footer">
-				<xsl:value-of select="$this-year" />					
+				<!-- <xsl:value-of select="$this-year" /> -->
 			</footer>
 		</div>
 	</xsl:template>

@@ -4,7 +4,9 @@
 
 	<xsl:template name="scripts">
 		<script src="{$workspace}/components/jquery/jquery.min.js"></script>
-		
+		<script src="{$workspace}/components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
+    <script src="{$workspace}/components/sass-bootstrap/js/bootstrap-collapse.js"></script>
+    
 		<!--
     <script src="{$workspace}/components/sass-bootstrap/js/bootstrap-affix.js"></script>
     <script src="{$workspace}/components/sass-bootstrap/js/bootstrap-alert.js"></script>
@@ -17,7 +19,6 @@
     <script src="{$workspace}/components/sass-bootstrap/js/bootstrap-typeahead.js"></script>
     <script src="{$workspace}/components/sass-bootstrap/js/bootstrap-carousel.js"></script>
     <script src="{$workspace}/components/sass-bootstrap/js/bootstrap-scrollspy.js"></script>
-    <script src="{$workspace}/components/sass-bootstrap/js/bootstrap-collapse.js"></script>
     <script src="{$workspace}/components/sass-bootstrap/js/bootstrap-tab.js"></script>
 		-->
 		

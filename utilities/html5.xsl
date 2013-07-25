@@ -5,7 +5,6 @@
 <xsl:import href="../utilities/navigation.xsl" />
 <xsl:import href="../utilities/date-time.xsl" />
 <xsl:import href="../includes/document_head.xsl" />
-<xsl:import href="../includes/header.xsl" />
 <xsl:import href="../includes/footer.xsl" />
 <xsl:import href="../includes/scripts.xsl" />
 
@@ -21,7 +20,6 @@
 				
 		<body id="{$current-page}-page">
 		
-			<xsl:call-template name="header" />
 			
 			<section id="maincontent" class="section">
 				<xsl:apply-templates />

@@ -4,3 +4,122 @@ $iconWhiteSpritePath: "../img/glyphicons-halflings-white.png";
 @import '../components/sass-bootstrap/lib/bootstrap';
 @import '../components/sass-bootstrap/lib/responsive';
 
+$orange: #fc571f;
+
+body {
+	background: $orange;
+	color: $white;
+	@media (max-width: 767px) {
+		padding: 0;
+	}
+}
+
+.topsection {
+	position: relative;
+	background: #e3e9e7;
+	min-height: 400px;
+	@media (max-width: 767px) {
+		min-height: inherit;
+		max-height: 500px;
+	}
+	@media (max-width: 480px) {
+		max-height: 350px;
+	}
+	.logo {
+		position: absolute;
+		background: url('../assets/static/images/logo.png') no-repeat center center;
+		width: 212px;
+		height: 123px;
+		@media (min-width: 1200px) {
+			width: 300px;
+			height: 175px;
+			margin-left: -150px;
+		}
+		position:absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -106px;
+		z-index: 1;
+		background-size: contain;
+		@include transition(height 0.3s ease, width 0.3s ease, min-height 0.3s ease, max-height 0.3s ease);
+	}
+}
+
+img.bgimage {
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	width:100%;
+	height:100%;
+	z-index:0;
+}
+
+.mainnav {
+	padding-top: 50px;
+	ul {
+		list-style: none;
+		li {
+			display: block;
+			a {
+				color: $black;
+			}
+		}
+	}
+}
+
+ul.leftnav {
+	float: left;
+}
+
+ul.rightnav {
+	float: right;
+}
+
+ul.leftnav li, ul.rightnav li {
+	float:left; margin-right: 100px;
+	@media (min-width: 1200px) {
+		margin-right: 200px;
+	}
+	@media (min-width: 768px) and (max-width: 979px) {
+		margin-right: 80px;
+	}
+	@include transition(margin-right 0.3s ease);
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+
+.scrollcontainer {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+
+.bottomsection {
+	text-align: center;
+	padding-top: 40px;
+}
+
+div.pane {
+	overflow: hidden;
+	clear: left;
+	position: relative;
+}
+
+ul.elements {
+	margin: 0;
+}
+ul.elements li {
+	width:100%;
+	display: block;
+	float: left;
+	margin: 0;
+	text-align: center;
+	position: relative;
+}
+
