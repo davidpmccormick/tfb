@@ -5,6 +5,15 @@ $iconWhiteSpritePath: "../img/glyphicons-halflings-white.png";
 @import '../components/sass-bootstrap/lib/responsive';
 
 $orange: #fc571f;
+$gray: #5d504d;
+$darkGray: #333;
+
+$regularRockwell: 14px;
+$regullarScript: $regularRockwell + 3;
+$largeRockwell: $regularRockwell + 3;
+$largeScript: $largeRockwell + 3;
+$regularMagallanes: 16px;
+$largeMagallanes: $regularMagallanes + 3;
 
 body {
 	background: $orange;
@@ -20,10 +29,10 @@ body {
 	min-height: 400px;
 	@media (max-width: 767px) {
 		min-height: inherit;
-		max-height: 500px;
+		max-height: 450px;
 	}
 	@media (max-width: 480px) {
-		max-height: 350px;
+		max-height: 300px;
 	}
 	.logo {
 		position: absolute;
@@ -58,12 +67,33 @@ img.bgimage {
 
 .mainnav {
 	padding-top: 50px;
+	font-family: rockwell;
+	font-size: $regularRockwell;
+	@media (min-width: 1200px) {
+		font-size: $largeRockwell;
+	}
+	text-transform: uppercase;
 	ul {
 		list-style: none;
 		li {
 			display: block;
+			
 			a {
-				color: $black;
+				color: $gray;
+				&:hover {
+					text-decoration: none;
+				}
+				&.currentanchor {
+					font-family: 'thirsty script';
+					font-size: $regullarScript;
+					@media (min-width: 1200px) {
+						font-size: $largeScript;
+					}
+					text-transform: capitalize;
+					border-bottom: 2px solid $orange;
+					font-size: 17px;
+					font-weight: 500;
+				}
 			}
 		}
 	}
@@ -91,7 +121,6 @@ ul.leftnav li, ul.rightnav li {
 	}
 }
 
-
 .scrollcontainer {
 	position: absolute;
 	bottom: 10px;
@@ -101,8 +130,62 @@ ul.leftnav li, ul.rightnav li {
 }
 
 .bottomsection {
+	position: relative;
+	font-family: magallanes;
+	font-size: $regularMagallanes;
 	text-align: center;
 	padding-top: 40px;
+	.templateswap {
+		padding: 0 40px;
+		@media (max-width: 480px) {
+			padding: 0 10px;
+		}
+	}
+	@media (max-width: 480px) {
+		font-size: 12px;
+	}
+}
+
+.modalwindow {
+	display: none;
+	position: absolute;
+	width: 400px;
+	margin-left: -200px;
+	top: 30%;
+	left: 50%;
+	background: rgba(255,255,255,0.8);
+	border-radius: 10px;
+	color: $darkGray;
+	z-index: 2;
+	.closebutton {
+		position: absolute;
+		top: 10px;
+		right: 16px;
+		font-size: 27px;
+		cursor: pointer;
+	}
+	.prev {
+		position: absolute;
+		bottom: 10px;
+		left: 15px;
+		cursor: pointer;
+	}
+	.next {
+		position: absolute;
+		bottom: 10px;
+		right: 15px;
+		cursor: pointer;
+	}
+	.inner {
+		padding: 20px 30px 30px;
+	}
+	h2 {
+		font-family: 'tradegothic';
+		font-size: 22px;
+	}
+	p {
+		font-family: magallanes;
+	}
 }
 
 div.pane {
@@ -114,6 +197,7 @@ div.pane {
 ul.elements {
 	margin: 0;
 }
+
 ul.elements li {
 	width:100%;
 	display: block;
@@ -121,5 +205,16 @@ ul.elements li {
 	margin: 0;
 	text-align: center;
 	position: relative;
+	img {
+		width: 100%;
+	}
+}
+
+.templates, .likestemplates {
+	display: none;
+}
+
+.relative {
+	display: relative;
 }
 
