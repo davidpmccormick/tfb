@@ -92,7 +92,7 @@ $(function() {
 		$('.pane').css('height', currentImageHeight);
 		
 		var theWidth = $(window).width();
-		// just resizd the currently focused image li
+		// just resize the currently focused image li
 		$('.elements li.currentimage').css('width', theWidth);
 
 		var theHeight = $(window).height()/1.3;
@@ -100,23 +100,24 @@ $(function() {
 	});
 	
 	// swipe, yo!
-	window.mySwipe = Swipe(document.getElementById('slider'));
+	window.mySwipe = new Swipe(document.getElementById('slider'));
 
+	// check if mySwipe exists -- once it does,
+	// make change the swipe margin-top
 	function doResize() {
 		setTimeout(function() {
-			if(mySwipe) {
-				// change margin-top of 'swipe'
+			// check if .swipe elements are visible (so swipe js is initialised)
+			if($('.swipe').css('visibility') === 'visible') {
 				var swipeHeight = $('#slider').height();
 				var topSectionHeight = $('.topsection').height();
 				var topMargin = topSectionHeight - swipeHeight;
 				$('.sliderwrapper').css('margin-top', topMargin);
-				console.log('done');
 			} else {
 				doResize();
 			}
 		}, 1);
 	}
-	
+	// do it
 	doResize();
 	
 });
