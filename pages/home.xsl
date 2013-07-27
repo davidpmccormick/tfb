@@ -24,7 +24,18 @@
 			</div>
 		</div>
 		
-		<div class="scrollcontainer" style="width:100%;">
+		<div class="sliderwrapper">
+			<div id="slider" class="swipe visible-phone">
+			  <div class='swipe-wrap'>
+			    <div><img src="{$workspace}/assets/static/images/1.png" alt="" /></div>
+			    <div><img src="{$workspace}/assets/static/images/2.png" alt="" /></div>
+			    <div><img src="{$workspace}/assets/static/images/3.png" alt="" /></div>
+			    <div><img src="{$workspace}/assets/static/images/5.png" alt="" /></div>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="scrollcontainer hidden-phone" style="width:100%;">
 			<div class="pane" style="width:100%">
 				<ul class="elements clearfix" style="width:100000px">
 					<li class="currentimage"><img src="{$workspace}/assets/static/images/1.png" alt="" /></li>
@@ -35,8 +46,8 @@
 					<li class="relative showlikes">
 						<div class="modalwindow">
 							<div class="closebutton">&#215;</div>
-							<div class="prev">prev</div>
-							<div class="next">next</div>
+							<div class="prev"><span class="icon icon-chevron-left"></span></div>
+							<div class="next"><span class="icon icon-chevron-right"></span></div>
 							<div class="inner" rel="1">
 								<h2>POUNDING THE SIDEWALK</h2>
 								<p>SUZANN RECENTLY COMPLETED THE L.A. MARATHON IN A RESPECTABLE 3.5 HOURS. THE BLISTERS HAVE JUST ABOUT HEALED -TAKE A LOOK AT PICTURES OF HER CROSSING THE LINE - PHEW!</p>
@@ -98,7 +109,8 @@ TEL: 323.661.1100 EMAIL: MAIL@THEFAMILYBIZ.COM</p>
 		</div>
 	</section>
 	
-	<section class="likestemplates foldup" rel="3"> <!-- this rel = total templates, for JS -->
+	<section class="likestemplates foldup" rel="3">
+		<!-- this rel = total templates, for JS --> 
 		<div rel="1" class="likestemplate">
 			<h2>POUNDING THE SIDEWALK</h2>
 			<p>SUZANN RECENTLY COMPLETED THE L.A. MARATHON IN A RESPECTABLE 3.5 HOURS. THE BLISTERS HAVE JUST ABOUT HEALED -TAKE A LOOK AT PICTURES OF HER CROSSING THE LINE - PHEW!</p>

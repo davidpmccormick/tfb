@@ -18,17 +18,14 @@
 	
 		<xsl:call-template name="document_head" />
 				
-		<body id="{$current-page}-page">
-		
-			
+		<body>
 			<section id="maincontent" class="section">
 				<xsl:apply-templates />
 			</section>
-			
 			<xsl:call-template name="footer" />
-
 			<xsl:call-template name="scripts" />
 		</body>
+		
 	</html>
 </xsl:template>
 

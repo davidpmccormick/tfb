@@ -21,7 +21,8 @@
     <script src="{$workspace}/components/sass-bootstrap/js/bootstrap-scrollspy.js"></script>
     <script src="{$workspace}/components/sass-bootstrap/js/bootstrap-tab.js"></script>
 		-->
-		
+
+		<script src="{$workspace}/js/libs/swipe.js"></script>
 		<script src="{$workspace}/js/main.js"></script>
 		<script>
 			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

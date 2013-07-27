@@ -82,6 +82,12 @@ $(function() {
 	
 	$(window).resize(function() {
 		
+		// change margin-top of 'swipe'
+		var swipeHeight = $('#slider').height();
+		var topSectionHeight = $('.topsection').height();
+		var topMargin = topSectionHeight - swipeHeight;
+		$('.sliderwrapper').css('margin-top', topMargin);
+		
 		var currentImageHeight = $('.currentimage').height();
 		$('.pane').css('height', currentImageHeight);
 		
@@ -92,5 +98,25 @@ $(function() {
 		var theHeight = $(window).height()/1.3;
 		$('.topsection').css('height', theHeight);
 	});
+	
+	// swipe, yo!
+	window.mySwipe = Swipe(document.getElementById('slider'));
+
+	function doResize() {
+		setTimeout(function() {
+			if(mySwipe) {
+				// change margin-top of 'swipe'
+				var swipeHeight = $('#slider').height();
+				var topSectionHeight = $('.topsection').height();
+				var topMargin = topSectionHeight - swipeHeight;
+				$('.sliderwrapper').css('margin-top', topMargin);
+				console.log('done');
+			} else {
+				doResize();
+			}
+		}, 1);
+	}
+	
+	doResize();
 	
 });
