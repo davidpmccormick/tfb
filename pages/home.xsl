@@ -73,7 +73,8 @@
 			<div class="row">
 				<div class="span12">
 					<div class="templateswap">
-						<p>HELLO.<br />
+						<h4 class="hidden-desktop">Hello</h4>
+						<p><span class="visible-desktop">HELLO.<br /></span>
 						COME ON IN AND MAKE YOURSELF AT HOME.<br />
 						FEEL FREE TO STAY AS LONG AS YOU LIKE.</p>
 					</div>
@@ -90,20 +91,25 @@
 	
 	<section class="templates foldup">
 		<div rel="0" class="hometemplate">
-			<p>HELLO.<br />
+			<h4 class="hidden-desktop">Hello</h4>
+			<p><span class="visible-desktop">HELLO.<br /></span>
 			COME ON IN AND MAKE YOURSELF AT HOME.<br />
 			FEEL FREE TO STAY AS LONG AS YOU LIKE.</p>
 		</div>
 		<div rel="1" class="abouttemplate">
+			<h4 class="hidden-desktop">About</h4>
 			<p>WE ARE PURVEYORS OF FINE DIGITAL MARKETING SERVICES. AS WITH EVERY FAMILY, WE KNOW THAT ONE SIZE DOES NOT FIT ALL, SO WE CREATE EXPERIENCES THAT ARE JUST RIGHT FOR YOU AND YOUR AUDIENCE THROUGH INNOVATIVE WEB AND MOBILE STRATEGIES, ENGAGING SOCIAL MEDIA INTEGRATIONS AND CREATIVE CONTENT MARKETING CAMPAIGNS.</p>
 		</div>
 		<div rel="2" class="worktemplate">
+			<h4 class="hidden-desktop">Work</h4>
 			<p>WE WORK WITH ENTERTAINMENT PROPERTIES AND BRANDS TO CREATE EXCITING AND ENGAGING NEW PARTNERSHIPS. WE'RE PROUD OF ALL OUR PROJECTS, BIG AND SMALL, AND THE CLIENTS THAT INSPIRE US.</p>
 		</div>
 		<div rel="3" class="likestemplate">
+			<h4 class="hidden-desktop">Likes</h4>
 			<p>WE LOVE TO PLAY AS HARD AS WE WORK, WHETHER IT BE HIKING, WALKING THE DOGS, DOING PILATES, GOING TO MUSIC GIGS, OR SIMPLY JUICING AND COOKING AT HOME. CHECK OUT OUR BOOKSHELF TO SEE WHAT WE GET UP TO IN OUR DOWNTIME.</p>
 		</div>
 		<div rel="4" class="contacttemplate">
+			<h4 class="hidden-desktop">Contact</h4>
 			<p>WE'D LOVE TO HAVE A CHAT, SO DROP US A LINE OR AN EMAIL AND SEE HOW WE CAN HELP YOU. OUR DOOR IS ALWAYS OPEN.<br />
 TEL: 323.661.1100 EMAIL: MAIL@THEFAMILYBIZ.COM</p>
 		</div>

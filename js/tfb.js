@@ -104,6 +104,11 @@ $(function() {
 	window.mySwipe = new Swipe(document.getElementById('slider'), {
 	  callback: function(index, elem) {
 			// swap the bottom section text
+			
+			// account for 'likes' not existing on mobile
+			if(index === 3) {
+				index = 4;
+			}
 			$('.templateswap').stop().fadeTo(200,0, function() {
 				var newTemplate = $('.templates').find('div[rel=' + index + ']').clone();
 				$('.templateswap').html(newTemplate).fadeTo(200,1);
