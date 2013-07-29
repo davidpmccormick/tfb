@@ -12,3 +12,14 @@
   width:100%;
   position: relative;
 }
+
+.sliderwrapper {
+	visibility: hidden;
+}
+
+.theslider {
+	color: red;
+	@media (max-width: 767px) {
+		color: blue;
+	}
+}

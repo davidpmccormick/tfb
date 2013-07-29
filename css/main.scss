@@ -230,5 +230,14 @@ ul.elements li {
 	display: relative;
 }
 
+/* keeping the main slider display block allows */
+/* us to synchronise desktop and mobile scroll events */
+.hidden-phone-dmc {
+	@media (max-width:767px) {
+		display: block!important;
+		visibility: hidden!important;
+	}
+}
+
 @import 'partials/swipe.scss';
 

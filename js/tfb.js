@@ -1,7 +1,37 @@
+// document ready
 $(function() {
 
+	function templateSwap(index) {
+		// swap the bottom section text
+		$('.templateswap').stop().fadeTo(200,0, function() {
+			var newTemplate = $('.templates').find('div[rel=' + index + ']').clone();
+			$('.templateswap').html(newTemplate).fadeTo(200,1);
+		});
+	}
+	function setCurrentAnchor(index) {
+		$('a.gotopane').removeClass('currentanchor');
+		$('a.gotopane[rel=' + index + ']').addClass('currentanchor');
+	}
+	function goToPane(index) {
+		$('.pane').stop().scrollTo( 'li:eq(' + index + ')', 800, 'ease' );
+		// set current image class
+		$('.pane li').removeClass('currentimage');
+		$('.pane li:eq(' + index + ')').addClass('currentimage');
+	}
+	
 	$('.gotopane').click(function(){
 		var theIndex = $(this).attr('rel');
+		
+		// synchronise swipe/scrollTo slides
+		if(theIndex < 3) {
+			window.mySwipe.slide(theIndex, 500);
+		} else if(theIndex == 4) {
+			// account for no 'likes' on mobile
+			window.mySwipe.slide(3, 500);
+			// go home
+		} else {
+			window.mySwipe.slide(0, 500);
+		}
 		
 		// hide the modal window
 		$('.modalwindow').fadeTo(200, 0, function() {
@@ -13,19 +43,13 @@ $(function() {
 		$('.elements li').css('width', theWidth);
 		
 		// swap the bottom section text
-		$('.templateswap').stop().fadeTo(200,0, function() {
-			var newTemplate = $('.templates').find('div[rel=' + theIndex + ']').clone();
-			$('.templateswap').html(newTemplate).fadeTo(200,1);
-		});
+		templateSwap(theIndex);
 		
 		// set current anchor class (for e.g. font-family)
 		$('.gotopane').removeClass('currentanchor');
 		$(this).addClass('currentanchor');
-		$('.pane').stop().scrollTo( 'li:eq(' + theIndex + ')', 800, 'ease' );
+		goToPane(theIndex);
 		
-		// set current image class
-		$('.pane li').removeClass('currentimage');
-		$('.pane li:eq(' + theIndex + ')').addClass('currentimage');
 	});
 
 	var theWidth = $(window).width();
@@ -80,7 +104,30 @@ $(function() {
 	});
 	
 	
-	$(window).resize(function() {	
+	$(window).setBreakpoints({
+		distinct: true, 
+			breakpoints: [
+			768
+		] 
+	});     
+	
+	$(window).bind('exitBreakpoint768',function() {
+		// if current slide index is 'likes', then
+		// set slide image and text to 'home'
+		if($('.rightnav li:first-child a').hasClass('currentanchor')) {
+		  goToPane(0);
+		  templateSwap(0);
+		  setCurrentAnchor(0);
+		}
+	});
+
+
+
+	
+	$(window).resize(function() {
+	
+		
+		
 	
 		// change margin-top of 'swipe'
 		var swipeHeight = $('#slider').height();
@@ -92,6 +139,7 @@ $(function() {
 		$('.pane').css('height', currentImageHeight);
 		
 		var theWidth = $(window).width();
+				
 		// just resize the currently focused image li
 		$('.elements li.currentimage').css('width', theWidth);
 
@@ -103,16 +151,19 @@ $(function() {
 	// swipe, yo!
 	window.mySwipe = new Swipe(document.getElementById('slider'), {
 	  callback: function(index, elem) {
+
 			// swap the bottom section text
-			
 			// account for 'likes' not existing on mobile
 			if(index === 3) {
-				index = 4;
-			}
-			$('.templateswap').stop().fadeTo(200,0, function() {
-				var newTemplate = $('.templates').find('div[rel=' + index + ']').clone();
-				$('.templateswap').html(newTemplate).fadeTo(200,1);
-			});
+				goToPane(4);
+				templateSwap(4);
+				setCurrentAnchor(4);
+			} else {
+				goToPane(index);
+				templateSwap(index);
+				setCurrentAnchor(index);
+			}		
+			
 	  },
 	  continuous: false
 	});
@@ -120,8 +171,15 @@ $(function() {
 	// go to first slide when logo clicked
 	$('.logo').click(function() {
 		window.mySwipe.slide(0, 500);
+		setCurrentAnchor(0);
 	});	
+	
+	
+});
 
+
+// window load
+$(window).load(function() {
 	// check if mySwipe exists -- once it does,
 	// make change the swipe margin-top
 	function doResize() {
@@ -131,7 +189,7 @@ $(function() {
 				var swipeHeight = $('#slider').height();
 				var topSectionHeight = $('.topsection').height();
 				var topMargin = (topSectionHeight - swipeHeight) - 3;
-				$('.sliderwrapper').css('margin-top', topMargin);
+				$('.sliderwrapper').css({'margin-top': topMargin});
 			} else {
 				doResize();
 			}
@@ -139,6 +197,4 @@ $(function() {
 	}
 	// do it
 	doResize();
-	
-	
-});
+})
