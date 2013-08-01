@@ -162,7 +162,13 @@ ul.leftnav li, ul.rightnav li {
 		padding-top: 15px;
 	}
 	.templateswap {
-		padding: 0 40px;
+		padding: 0 120px;
+		@media (max-width: 979px) {
+			padding: 0 40px
+		}
+		@media (min-width: 1200px) {
+			padding: 0 180px;
+		}
 		@media (max-width: 480px) {
 			padding: 0 10px;
 		}
@@ -272,11 +278,8 @@ ul.elements li {
 .mobilearrows {
 	display: none;
 	@media (max-width: 767px) {
-		&.notouch {
-			display: block;
-		}
+		display: block;
 	}
-	
 }
 
 .mobilenext, .mobileprev {

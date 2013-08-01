@@ -78,8 +78,8 @@
 			<div class="row">
 				<div class="span12 relative">
 					<div class="mobilearrows">
+						<div class="mobileprev" style="display:none;"></div>
 						<div class="mobilenext"></div>
-						<div class="mobileprev"></div>
 					</div>
 					<div class="templateswap">
 						<h4 class="visible-phone">Hello</h4>

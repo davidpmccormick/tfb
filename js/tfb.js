@@ -78,6 +78,8 @@ $(function() {
 	var totalLikes = parseInt($('.likestemplates').attr('rel'), 10);
 	// add in the likes text
 	$('.next').click(function() {
+		// show the 'prev' arrow if it's hidden
+		$('.prev').fadeTo(200,1);
 		var currentLikeIndex = $('.inner').attr('rel');
 		var nextLikeIndex = parseInt(currentLikeIndex, 10) + 1;
 		// if we're not at the end of the list, go up
@@ -89,9 +91,14 @@ $(function() {
 				$('.inner').attr('rel', nextLikeIndex);
 			});
 		}
+		if (nextLikeIndex === totalLikes) {
+			$('.next').fadeTo(200,0);
+		}
 	});
 	
 	$('.prev').click(function() {
+		// show the 'next' button if it's hidden
+		$('.next').fadeTo(200,1);
 		var currentLikeIndex = $('.inner').attr('rel');
 		var prevLikeIndex = parseInt(currentLikeIndex, 10) - 1;
 		// if we're not at the beginning of the list, go down
@@ -103,6 +110,9 @@ $(function() {
 				$('.inner').attr('rel', prevLikeIndex);
 			});
 		}
+		if (prevLikeIndex === 1) {
+			$('.prev').fadeTo(200,0);
+		}
 	});
 	
 	// test if we're on a touchscreen device...
@@ -113,7 +123,8 @@ $(function() {
 		$('.mobilearrows').addClass('notouch');
 	}
 	
-
+	// set up breakpoints to e.g. fix 'likes' discrepancy
+	// when switching to/from mobile/desktop version
 	$(window).setBreakpoints({
 		distinct: true,
 			breakpoints: [
@@ -169,6 +180,18 @@ $(function() {
 				setCurrentAnchor(index);
 			}
 			
+			// show prev/next arrows...
+			$('.mobilenext, .mobileprev').fadeTo(200,1);
+			// but conditionally hide them if
+			// we're at the end of the slides
+			if(index === 0) {
+				$('.mobileprev').fadeTo(200,0);
+			}
+			if(index === 3) {
+				$('.mobilenext').fadeTo(200,0);
+			}
+			
+			
 		},
 		continuous: false
 	});
@@ -187,6 +210,23 @@ $(function() {
 	$('.mobileprev').click(function() {
 		window.mySwipe.prev();
 	});
+	
+	
+	
+	// swiping on the bottom section moves
+	// slides using TouchSwipe plugin
+	$('.bottomsection').swipe({
+		// swipeLeft = 'next'
+		swipeLeft:function(event, direction, distance, duration, fingerCount) {
+			window.mySwipe.next();
+		},
+		// swipeRight = 'prev'
+		swipeRight:function(event, direction, distance, duration, fingerCount) {
+			window.mySwipe.prev();
+		}
+	});
+
+
 
 });
 
