@@ -1,3 +1,6 @@
+/*global Swipe:false */
+/*global Modernizr:false */
+
 // document ready
 $(function() {
 
@@ -13,19 +16,18 @@ $(function() {
 		$('a.gotopane[rel=' + index + ']').addClass('currentanchor');
 	}
 	function goToPane(index) {
-		$('.pane').stop().scrollTo( 'li:eq(' + index + ')', 800, 'ease' );
+		$('.pane').stop().scrollTo( 'li:eq(' + index + ')', 800, {easing:'easeInOutCubic'} );
 		// set current image class
 		$('.pane li').removeClass('currentimage');
 		$('.pane li:eq(' + index + ')').addClass('currentimage');
 	}
 	
 	$('.gotopane').click(function(){
-		var theIndex = $(this).attr('rel');
-		
+		var theIndex = parseInt($(this).attr('rel'),10);
 		// synchronise swipe/scrollTo slides
 		if(theIndex < 3) {
 			window.mySwipe.slide(theIndex, 500);
-		} else if(theIndex == 4) {
+		} else if(theIndex === 4) {
 			// account for no 'likes' on mobile
 			window.mySwipe.slide(3, 500);
 			// go home
@@ -55,7 +57,7 @@ $(function() {
 	var theWidth = $(window).width();
 	$('.elements li').css('width', theWidth);
 
-	var theHeight = $(window).height()/1.3;
+	var theHeight = $(window).height()/1.4;
 	$('.topsection').css('height', theHeight);
 	
 	
@@ -73,11 +75,11 @@ $(function() {
 	});
 	
 	// previous and next buttons on modal
-	var totalLikes = parseInt($('.likestemplates').attr('rel'));
+	var totalLikes = parseInt($('.likestemplates').attr('rel'), 10);
 	// add in the likes text
 	$('.next').click(function() {
 		var currentLikeIndex = $('.inner').attr('rel');
-		var nextLikeIndex = parseInt(currentLikeIndex) + 1;
+		var nextLikeIndex = parseInt(currentLikeIndex, 10) + 1;
 		// if we're not at the end of the list, go up
 		if (nextLikeIndex <= totalLikes) {
 			var nextLike = $('.likestemplates').find('div[rel=' + nextLikeIndex + ']').clone();
@@ -86,12 +88,12 @@ $(function() {
 				// update the rel
 				$('.inner').attr('rel', nextLikeIndex);
 			});
-		}	
+		}
 	});
 	
 	$('.prev').click(function() {
 		var currentLikeIndex = $('.inner').attr('rel');
-		var prevLikeIndex = parseInt(currentLikeIndex - 1);
+		var prevLikeIndex = parseInt(currentLikeIndex, 10) - 1;
 		// if we're not at the beginning of the list, go down
 		if (prevLikeIndex > 0) {
 			var prevLike = $('.likestemplates').find('div[rel=' + prevLikeIndex + ']').clone();
@@ -103,32 +105,35 @@ $(function() {
 		}
 	});
 	
+	// test if we're on a touchscreen device...
+	if(Modernizr.touch) {
+		// if so, do some touch-specific stuff
+	} else {
+		// if not -- add 'notouch' class to '.mobilearrows'
+		$('.mobilearrows').addClass('notouch');
+	}
 	
+
 	$(window).setBreakpoints({
-		distinct: true, 
+		distinct: true,
 			breakpoints: [
 			768
-		] 
-	});     
-	
+		]
+	});
+
 	$(window).bind('exitBreakpoint768',function() {
 		// if current slide index is 'likes', then
 		// set slide image and text to 'home'
 		if($('.rightnav li:first-child a').hasClass('currentanchor')) {
-		  goToPane(0);
-		  templateSwap(0);
-		  setCurrentAnchor(0);
+			goToPane(0);
+			templateSwap(0);
+			setCurrentAnchor(0);
 		}
 	});
 
 
-
-	
 	$(window).resize(function() {
-	
-		
-		
-	
+
 		// change margin-top of 'swipe'
 		var swipeHeight = $('#slider').height();
 		var topSectionHeight = $('.topsection').height();
@@ -150,7 +155,7 @@ $(function() {
 	
 	// swipe, yo!
 	window.mySwipe = new Swipe(document.getElementById('slider'), {
-	  callback: function(index, elem) {
+		callback: function(index) {
 
 			// swap the bottom section text
 			// account for 'likes' not existing on mobile
@@ -162,21 +167,28 @@ $(function() {
 				goToPane(index);
 				templateSwap(index);
 				setCurrentAnchor(index);
-			}		
+			}
 			
-	  },
-	  continuous: false
+		},
+		continuous: false
 	});
 	
 	// go to first slide when logo clicked
 	$('.logo').click(function() {
 		window.mySwipe.slide(0, 500);
 		setCurrentAnchor(0);
-	});	
+	});
 	
+	// go to next/prev slide when mobilearrows tapped
+	$('.mobilenext').click(function() {
+		window.mySwipe.next();
+	});
 	
-});
+	$('.mobileprev').click(function() {
+		window.mySwipe.prev();
+	});
 
+});
 
 // window load
 $(window).load(function() {
@@ -197,4 +209,4 @@ $(window).load(function() {
 	}
 	// do it
 	doResize();
-})
+});

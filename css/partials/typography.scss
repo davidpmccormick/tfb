@@ -1,0 +1,67 @@
+@font-face {
+	font-family: 'magallanes_lightlight';
+	src: url('../fonts/latinotype_-_magallaneslight-webfont.eot');
+	src: url('../fonts/latinotype_-_magallaneslight-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/latinotype_-_magallaneslight-webfont.woff') format('woff'),
+		url('../fonts/latinotype_-_magallaneslight-webfont.ttf') format('truetype'),
+		url('../fonts/latinotype_-_magallaneslight-webfont.svg#magallanes_lightlight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'thirsty_scriptmedium';
+	src: url('../fonts/yellow_design_studio_-_thirstyscriptmedium-webfont.eot');
+	src: url('../fonts/yellow_design_studio_-_thirstyscriptmedium-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/yellow_design_studio_-_thirstyscriptmedium-webfont.woff') format('woff'),
+		url('../fonts/yellow_design_studio_-_thirstyscriptmedium-webfont.ttf') format('truetype'),
+		url('../fonts/yellow_design_studio_-_thirstyscriptmedium-webfont.svg#thirsty_scriptmedium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'tradegothicboldcondtwenty';
+	src: url('../fonts/trade_gothic_bold_condensed_no_20-webfont.eot');
+	src: url('../fonts/trade_gothic_bold_condensed_no_20-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/trade_gothic_bold_condensed_no_20-webfont.woff') format('woff'),
+		url('../fonts/trade_gothic_bold_condensed_no_20-webfont.ttf') format('truetype'),
+		url('../fonts/trade_gothic_bold_condensed_no_20-webfont.svg#tradegothicboldcondtwenty') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'rockwellregular';
+	src: url('../fonts/rockwell-webfont.eot');
+	src: url('../fonts/rockwell-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/rockwell-webfont.woff') format('woff'),
+		url('../fonts/rockwell-webfont.ttf') format('truetype'),
+		url('../fonts/rockwell-webfont.svg#rockwellregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin magallanes {
+	font-family: 'magallanes_lightlight';
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin thirsty {
+	font-family: 'thirsty_scriptmedium';
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin tradegothic {
+	font-family: 'tradegothicboldcondtwenty';
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin rockwell {
+	font-family: 'rockwellregular';
+	font-weight: normal;
+	font-style: normal;
+}

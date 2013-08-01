@@ -21,7 +21,7 @@
 				<!-- link to any non-IE stylesheets/JS -->
 			<xsl:comment><![CDATA[<!]]>[endif]</xsl:comment>	
 			
-			<script src="{$workspace}/components/modernizr/modernizr.js"></script>
+			<script src="{$workspace}/js/libs/modernizr.min.js"></script>
 			
 			<xsl:comment><![CDATA[[if (gte IE 6)&(lte IE 8)]><script type="text/javascript" src="]]><xsl:value-of select="$root"/><![CDATA[/workspace/components/selectivizr/selectivizr.js"></script><![endif]]]></xsl:comment>
 		</head>

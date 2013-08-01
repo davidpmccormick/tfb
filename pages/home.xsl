@@ -12,19 +12,20 @@
 				<div class="span12">
 					<nav class="mainnav hidden-phone" style="position:relative;z-index:1;">
 						<ul class="leftnav">
-							<li><a class="gotopane" rel="1" href="#1">About</a></li>
-							<li><a class="gotopane" rel="2" href="#2">Work</a></li>
+							<li><a class="gotopane" rel="1" href="#">About</a></li>
+							<li><a class="gotopane" rel="2" href="#">Work</a></li>
 						</ul>
 						<ul class="rightnav">
-							<li><a class="gotopane" rel="3" href="#3">Likes</a></li>
-							<li><a class="gotopane" rel="4" href="#4">Contact</a></li>
+							<li><a class="gotopane" rel="3" href="#">Likes</a></li>
+							<li><a class="gotopane" rel="4" href="#">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
 			</div>
 		</div>
 		
-		<div class="sliderwrapper">
+		<!-- smaller screen slides -->
+		<section class="sliderwrapper">
 			<div id="slider" class="theslider swipe visible-phone">
 			  <div class='swipe-wrap'>
 			    <div><img src="{$workspace}/assets/static/images/1.png" alt="" /></div>
@@ -33,9 +34,11 @@
 			    <div><img src="{$workspace}/assets/static/images/5.png" alt="" /></div>
 			  </div>
 			</div>
-		</div>
+		</section>
+		<!-- end smaller screen slides -->
 		
-		<div class="scrollcontainer hidden-phone-dmc" style="width:100%;">
+		<!-- larger screen slides -->
+		<section class="scrollcontainer hidden-phone-dmc" style="width:100%;">
 			<div class="pane" style="width:100%">
 				<ul class="elements clearfix" style="width:100000px">
 					<li class="currentimage"><img src="{$workspace}/assets/static/images/1.png" alt="" /></li>
@@ -45,12 +48,12 @@
 					<!-- likes section -->
 					<li class="relative showlikes">
 						<div class="modalwindow">
-							<div class="closebutton">&#215;</div>
-							<div class="prev"><span class="icon icon-chevron-left"></span></div>
-							<div class="next"><span class="icon icon-chevron-right"></span></div>
+							<div class="closebutton"></div>
+							<div class="prev"></div>
+							<div class="next"></div>
 							<div class="inner" rel="1">
 								<h2>POUNDING THE SIDEWALK</h2>
-								<p>SUZANN RECENTLY COMPLETED THE L.A. MARATHON IN A RESPECTABLE 3.5 HOURS. THE BLISTERS HAVE JUST ABOUT HEALED -TAKE A LOOK AT PICTURES OF HER CROSSING THE LINE - PHEW!</p>
+								<p>SUZANN RECENTLY COMPLETED THE L.A. MARATHON IN A RESPECTABLE 3.5 HOURS. THE BLISTERS HAVE JUST ABOUT HEALED -TAKE A LOOK AT <a href="#">PICTURES OF HER CROSSING THE LINE</a> - PHEW!</p>
 							</div>
 						</div>
 						<img src="{$workspace}/assets/static/images/4.png" alt="" />
@@ -60,7 +63,9 @@
 					<li><img src="{$workspace}/assets/static/images/5.png" alt="" /></li>
 				</ul>
 			</div>
-		</div>
+		</section>
+		<!-- end larger screen slides -->
+		
 	</section>
 	
 	<section class="bottomsection clearfix">
@@ -71,10 +76,14 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="span12">
+				<div class="span12 relative">
+					<div class="mobilearrows">
+						<div class="mobilenext"></div>
+						<div class="mobileprev"></div>
+					</div>
 					<div class="templateswap">
 						<h4 class="visible-phone">Hello</h4>
-						<p><span class="visible-desktop">HELLO.<br /></span>
+						<p><span class="visible-desktop visible-tablet">HELLO.<br /></span>
 						COME ON IN AND MAKE YOURSELF AT HOME.<br />
 						FEEL FREE TO STAY AS LONG AS YOU LIKE.</p>
 					</div>
@@ -91,8 +100,8 @@
 	
 	<section class="templates foldup">
 		<div rel="0" class="hometemplate">
-			<h4 class="hidden-desktop">Hello</h4>
-			<p><span class="visible-desktop">HELLO.<br /></span>
+			<h4 class="visible-phone">Hello</h4>
+			<p><span class="visible-desktop visible-tablet">HELLO.<br /></span>
 			COME ON IN AND MAKE YOURSELF AT HOME.<br />
 			FEEL FREE TO STAY AS LONG AS YOU LIKE.</p>
 		</div>
@@ -111,7 +120,7 @@
 		<div rel="4" class="contacttemplate">
 			<h4 class="visible-phone">Contact</h4>
 			<p>WE'D LOVE TO HAVE A CHAT, SO DROP US A LINE OR AN EMAIL AND SEE HOW WE CAN HELP YOU. OUR DOOR IS ALWAYS OPEN.<br />
-TEL: 323.661.1100 EMAIL: MAIL@THEFAMILYBIZ.COM</p>
+TEL: 323.661.1100 EMAIL: <a href="mailto:mail@thefamilybiz.com">MAIL@THEFAMILYBIZ.COM</a></p>
 		</div>
 	</section>
 	
@@ -119,7 +128,7 @@ TEL: 323.661.1100 EMAIL: MAIL@THEFAMILYBIZ.COM</p>
 		<!-- this rel = total templates, for JS --> 
 		<div rel="1" class="likestemplate">
 			<h2>POUNDING THE SIDEWALK</h2>
-			<p>SUZANN RECENTLY COMPLETED THE L.A. MARATHON IN A RESPECTABLE 3.5 HOURS. THE BLISTERS HAVE JUST ABOUT HEALED -TAKE A LOOK AT PICTURES OF HER CROSSING THE LINE - PHEW!</p>
+			<p>SUZANN RECENTLY COMPLETED THE L.A. MARATHON IN A RESPECTABLE 3.5 HOURS. THE BLISTERS HAVE JUST ABOUT HEALED -TAKE A LOOK AT <a href="#">PICTURES OF HER CROSSING THE LINE</a> - PHEW!</p>
 		</div>
 		<div rel="2" class="likestemplate">
 			<h2>LOREM IPSUM</h2>

@@ -3,10 +3,14 @@ $iconWhiteSpritePath: "../img/glyphicons-halflings-white.png";
 
 @import '../components/sass-bootstrap/lib/bootstrap';
 @import '../components/sass-bootstrap/lib/responsive';
+@import "compass/css3/transition";
+@import 'partials/typography';
 
 $orange: #fc571f;
 $gray: #5d504d;
 $darkGray: #333;
+$highlight: #C8F526;
+$red: red;
 
 $regularRockwell: 14px;
 $regullarScript: $regularRockwell + 3;
@@ -23,8 +27,18 @@ body {
 	}
 }
 
+a {
+	color: inherit;
+	@include transition-property(color);
+  @include transition-duration(0.2s);
+	&:hover {
+		text-decoration: none;
+		color: #ddd;
+	}
+}
+
 h4 {
-	font-family: 'thirsty script';
+	@include thirsty;
 	margin: 0 0 10px;
 }
 
@@ -76,7 +90,7 @@ img.bgimage {
 
 .mainnav {
 	padding-top: 50px;
-	font-family: rockwell;
+	@include rockwell;
 	font-size: $regularRockwell;
 	@media (min-width: 1200px) {
 		font-size: $largeRockwell;
@@ -93,7 +107,7 @@ img.bgimage {
 					text-decoration: none;
 				}
 				&.currentanchor {
-					font-family: 'thirsty script';
+					@include thirsty;
 					font-size: $regullarScript;
 					@media (min-width: 1200px) {
 						font-size: $largeScript;
@@ -140,10 +154,10 @@ ul.leftnav li, ul.rightnav li {
 
 .bottomsection {
 	position: relative;
-	font-family: magallanes;
+	@include magallanes;
 	font-size: $regularMagallanes;
 	text-align: center;
-	padding-top: 40px;
+	padding-top: 20px;
 	@media (max-width: 480px) {
 		padding-top: 15px;
 	}
@@ -174,29 +188,45 @@ ul.leftnav li, ul.rightnav li {
 		top: 10px;
 		right: 16px;
 		font-size: 27px;
+		background: url('../assets/static/images/cross.png') no-repeat center center;
+		width: 25px;
+		height: 25px;
 		cursor: pointer;
 	}
 	.prev {
 		position: absolute;
-		bottom: 10px;
-		left: 15px;
+		bottom: 20px;
+		left: 20px;
 		cursor: pointer;
+		width: 9px;
+		height: 15px;
+		background: url('../assets/static/images/leftarrow.png') no-repeat center center;
 	}
 	.next {
 		position: absolute;
-		bottom: 10px;
-		right: 15px;
+		bottom: 20px;
+		right: 20px;
 		cursor: pointer;
+		width: 9px;
+		height: 15px;
+		background: url('../assets/static/images/rightarrow.png') no-repeat center center;
 	}
 	.inner {
-		padding: 20px 30px 30px;
+		padding: 20px 30px 45px;
+		a {
+			color: $red;
+			&:hover {
+				text-decoration: none;
+				color: darken($red, 20%);
+			}
+		}
 	}
 	h2 {
-		font-family: 'tradegothic';
+		@include tradegothic;
 		font-size: 22px;
 	}
 	p {
-		font-family: magallanes;
+		@include magallanes;
 	}
 }
 
@@ -227,7 +257,7 @@ ul.elements li {
 }
 
 .relative {
-	display: relative;
+	position: relative;
 }
 
 /* keeping the main slider display block allows */
@@ -237,6 +267,48 @@ ul.elements li {
 		display: block!important;
 		visibility: hidden!important;
 	}
+}
+
+.mobilearrows {
+	display: none;
+	@media (max-width: 767px) {
+		&.notouch {
+			display: block;
+		}
+	}
+	
+}
+
+.mobilenext, .mobileprev {
+	cursor: pointer;
+	position: absolute;
+	width: 15px;
+	height: 15px;
+}
+
+.mobilenext {
+	right: 20px;
+	background: url('../assets/static/images/rightarrowwhite.png') no-repeat center center;
+}
+
+.mobileprev {
+	left: 20px;
+	background: url('../assets/static/images/leftarrowwhite.png') no-repeat center center;
+}
+
+::selection {
+	background: $highlight;
+	}
+::-moz-selection {
+	background: $highlight;
+}
+
+img {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
 
 @import 'partials/swipe.scss';
