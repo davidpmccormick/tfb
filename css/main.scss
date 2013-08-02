@@ -329,5 +329,30 @@ img {
 	user-select: none;
 }
 
+.introimagecontainer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999;
+	background: $orange;
+}
+.introimage {
+	position: absolute;
+	background: url('../assets/static/images/intro.png') no-repeat center center;
+	background-size: contain;
+	top: 50px;
+	width: 400px;
+	height: 503px;
+	left: 50%;
+	margin-left: -200px;
+	@media (max-width: 480px) {
+		top: 10px;
+		width: 350px;
+		margin-left: -175px;
+	}
+}
+
 @import 'partials/swipe.scss';
 

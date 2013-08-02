@@ -4,6 +4,12 @@
 <xsl:import href='../utilities/html5.xsl'/>
 
 <xsl:template match="data">
+
+	<div class="introimagecontainer start">
+		<div class="introimage"></div>
+	</div>
+	
+	
 	<section class="topsection clearfix">
 		<div class="gotopane" rel="0" href="#0"><div class="logo" /></div>
 		<img class="bgimage" src="{$workspace}/assets/static/images/bg.png" alt="background" />
@@ -105,11 +111,11 @@
 		</div>
 		<div rel="1" class="abouttemplate">
 			<h4 class="visible-phone">About</h4>
-			<p>WE ARE PURVEYORS OF FINE DIGITAL MARKETING SERVICES. AS WITH EVERY FAMILY, WE KNOW THAT ONE SIZE DOES NOT FIT ALL, SO WE CREATE EXPERIENCES THAT ARE JUST RIGHT FOR YOU AND YOUR AUDIENCE THROUGH INNOVATIVE WEB AND MOBILE STRATEGIES, ENGAGING SOCIAL MEDIA INTEGRATIONS AND CREATIVE CONTENT MARKETING CAMPAIGNS.</p>
+			<p>AS WITH EVERY FAMILY, WE KNOW THAT ONE SIZE DOES NOT FIT ALL, SO WE CREATE DIGITAL MARKETING EXPERIENCES THAT ARE JUST RIGHT FOR YOU AND YOUR AUDIENCE.</p>
 		</div>
 		<div rel="2" class="worktemplate">
 			<h4 class="visible-phone">Work</h4>
-			<p>WE WORK WITH ENTERTAINMENT PROPERTIES AND BRANDS TO CREATE EXCITING AND ENGAGING NEW PARTNERSHIPS. WE'RE PROUD OF ALL OUR PROJECTS, BIG AND SMALL, AND THE CLIENTS THAT INSPIRE US.</p>
+			<p>WE HAVE WORKED WITH ENTERTAINMENT PROPERTIES AND BRANDS SUCH AS UNIVERSAL PICTURES, ULTRA RECORDS, THE LIGHT GROUP AND MINISTRY OF SOUND TO CREATE INTERACTIVE, ENGAGING CONTENT AND DIGITAL MARKETING CAMPAIGNS.</p>
 		</div>
 		<div rel="3" class="likestemplate">
 			<h4 class="visible-phone">Likes</h4>

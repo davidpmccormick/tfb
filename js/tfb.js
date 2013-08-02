@@ -1,6 +1,14 @@
 /*global Swipe:false */
 /*global Modernizr:false */
 
+// global function -- to be used on
+// document ready and window load
+function slideOffIntro() {
+		$('.introimagecontainer').removeClass('start').animate({left: '-100%', right: '100%'}, 400, 'easeInOutQuart', function() {
+			$('.introimagecontainer').remove();
+		});
+	}
+
 // document ready
 $(function() {
 
@@ -21,6 +29,10 @@ $(function() {
 		$('.pane li').removeClass('currentimage');
 		$('.pane li:eq(' + index + ')').addClass('currentimage');
 	}
+
+	$('.introimagecontainer').click(function() {
+		slideOffIntro();
+	});
 	
 	$('.gotopane').click(function(){
 		var theIndex = parseInt($(this).attr('rel'),10);
@@ -230,6 +242,15 @@ $(function() {
 
 // window load
 $(window).load(function() {
+
+	// after two seconds, slide out the
+	// intro slide (if necessary)
+	setTimeout(function() {
+		if($('.introimagecontainer').hasClass('start')) {
+			slideOffIntro();
+		}
+	}, 2000);
+
 	// check if mySwipe exists -- once it does,
 	// make change the swipe margin-top
 	function doResize() {
