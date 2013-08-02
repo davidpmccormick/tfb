@@ -30,6 +30,12 @@ $(function() {
 		$('.pane li:eq(' + index + ')').addClass('currentimage');
 	}
 
+	// make sure the intro image is loaded before it's faded up	
+	var workspaceDir = $('body').attr('rel');
+	$('<img/>').attr('src',  workspaceDir + '/assets/static/images/intro.png').load(function() {
+		$('.introimage').fadeTo(200,1);
+	});
+
 	$('.introimagecontainer').click(function() {
 		slideOffIntro();
 	});
@@ -74,8 +80,29 @@ $(function() {
 	
 	
 	// show the likes modal when the image is clicked
-	$('.showlikes img').click(function() {
-		$('.modalwindow').stop().fadeTo(200,1);
+	$('.showlikes').click(function() {
+		var totalLikes = parseInt($('.likestemplates').attr('rel'), 10);
+
+		var likeNumber = parseInt($(this).attr('rel'), 10);
+		
+		// hide prev/next if we're at the end
+		if (likeNumber === 1) {
+			$('.prev').hide();
+			$('.next').show();
+		} else if (likeNumber === totalLikes) {
+			$('.next').hide();
+			$('.prev').show();
+		} else {
+			$('.prev').show();
+			$('.next').show();
+		}
+		var initialLike = $('.likestemplates').find('div[rel=' + likeNumber + ']').clone();
+		// set the correc like template based on which book was clicked
+		
+		$('.inner').attr('rel', likeNumber).fadeTo(200,0, function() {
+			$('.inner').html(initialLike).fadeTo(200,1);
+			$('.modalwindow').stop().fadeTo(200,1);
+		});
 	});
 	
 	// remove the modal window when the close is clicked
@@ -91,7 +118,7 @@ $(function() {
 	// add in the likes text
 	$('.next').click(function() {
 		// show the 'prev' arrow if it's hidden
-		$('.prev').fadeTo(200,1);
+		$('.prev').show();
 		var currentLikeIndex = $('.inner').attr('rel');
 		var nextLikeIndex = parseInt(currentLikeIndex, 10) + 1;
 		// if we're not at the end of the list, go up
@@ -104,13 +131,13 @@ $(function() {
 			});
 		}
 		if (nextLikeIndex === totalLikes) {
-			$('.next').fadeTo(200,0);
+			$('.next').hide();
 		}
 	});
 	
 	$('.prev').click(function() {
 		// show the 'next' button if it's hidden
-		$('.next').fadeTo(200,1);
+		$('.next').show();
 		var currentLikeIndex = $('.inner').attr('rel');
 		var prevLikeIndex = parseInt(currentLikeIndex, 10) - 1;
 		// if we're not at the beginning of the list, go down
@@ -123,7 +150,7 @@ $(function() {
 			});
 		}
 		if (prevLikeIndex === 1) {
-			$('.prev').fadeTo(200,0);
+			$('.prev').hide();
 		}
 	});
 	
@@ -242,7 +269,7 @@ $(function() {
 
 // window load
 $(window).load(function() {
-
+	
 	// after two seconds, slide out the
 	// intro slide (if necessary)
 	setTimeout(function() {

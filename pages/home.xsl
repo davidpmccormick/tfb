@@ -52,14 +52,24 @@
 					<li><img src="{$workspace}/assets/static/images/3.png" alt="" /></li>
 					
 					<!-- likes section -->
-					<li class="relative showlikes">
+					<li class="relative">
+					
+						<div class="showlikes" rel="1"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
+						<div class="showlikes" rel="2"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
+						<div class="showlikes" rel="3"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
+						<div class="showlikes" rel="4"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
+						<div class="showlikes" rel="5"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
+						<div class="showlikes" rel="6"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
+						<div class="showlikes" rel="7"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
+						<div class="showlikes" rel="8"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
+						<div class="showlikes" rel="9"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
+						
 						<div class="modalwindow">
 							<div class="closebutton"></div>
-							<div class="prev" style="display:none;"></div>
+							<div class="prev"></div>
 							<div class="next"></div>
-							<div class="inner" rel="1">
-								<h2>POUNDING THE SIDEWALK</h2>
-								<p>SUZANN RECENTLY COMPLETED THE L.A. MARATHON IN A RESPECTABLE 3.5 HOURS. THE BLISTERS HAVE JUST ABOUT HEALED -TAKE A LOOK AT <a href="#">PICTURES OF HER CROSSING THE LINE</a> - PHEW!</p>
+							<div class="inner" rel="">
+								<!-- filled from likestemplates -->
 							</div>
 						</div>
 						<img src="{$workspace}/assets/static/images/4.png" alt="" />
@@ -125,10 +135,17 @@
 			<h4 class="visible-phone">Contact</h4>
 			<p>WE'D LOVE TO HAVE A CHAT, SO DROP US A LINE OR AN EMAIL AND SEE HOW WE CAN HELP YOU. OUR DOOR IS ALWAYS OPEN.<br />
 TEL: 323.661.1100 EMAIL: <a href="mailto:mail@thefamilybiz.com">MAIL@THEFAMILYBIZ.COM</a></p>
+
+			<div class="phonesocialmedia visible-phone">
+				<a href="#"><img src="{$workspace}/assets/static/images/facebook.png" /></a>
+				<a href="#"><img src="{$workspace}/assets/static/images/twitter.png" /></a>
+				<a href="#"><img src="{$workspace}/assets/static/images/instagram.png" /></a>
+			</div>		
+
 		</div>
 	</section>
 	
-	<section class="likestemplates foldup" rel="3">
+	<section class="likestemplates foldup" rel="9">
 		<!-- this rel = total templates, for JS --> 
 		<div rel="1" class="likestemplate">
 			<h2>POUNDING THE SIDEWALK</h2>
@@ -140,6 +157,30 @@ TEL: 323.661.1100 EMAIL: <a href="mailto:mail@thefamilybiz.com">MAIL@THEFAMILYBI
 		</div>
 		<div rel="3" class="likestemplate">
 			<h2>DOLOR SIT AMET</h2>
+			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
+		</div>
+		<div rel="4" class="likestemplate">
+			<h2>NUMBER FOUR</h2>
+			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
+		</div>
+		<div rel="5" class="likestemplate">
+			<h2>THE FIFTH</h2>
+			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
+		</div>
+		<div rel="6" class="likestemplate">
+			<h2>SIX!</h2>
+			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
+		</div>
+		<div rel="7" class="likestemplate">
+			<h2>NUMBER SEVEN</h2>
+			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
+		</div>
+		<div rel="8" class="likestemplate">
+			<h2>THIS IS EIGHT</h2>
+			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
+		</div>
+		<div rel="9" class="likestemplate">
+			<h2>LAST ONE: NINE</h2>
 			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
 		</div>
 	</section>

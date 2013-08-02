@@ -18,7 +18,7 @@
 	
 		<xsl:call-template name="document_head" />
 				
-		<body>
+		<body rel="{$workspace}">
 			<section id="maincontent" class="section">
 				<xsl:apply-templates />
 			</section>
