@@ -85,7 +85,7 @@
 	</section>
 	
 	<section class="bottomsection clearfix">
-		<div class="hidden-phone" style="position: absolute; right:10px; top:10px;">
+		<div class="hidden-phone" style="position: absolute; right:10px; top:37px;">
 			<a href="#"><img src="{$workspace}/assets/static/images/facebook.png" /></a><br />
 			<a href="#"><img src="{$workspace}/assets/static/images/twitter.png" /></a><br />
 			<a href="#"><img src="{$workspace}/assets/static/images/instagram.png" /></a><br />			
@@ -98,10 +98,12 @@
 						<a href="#" class="mobilenext"></a>
 					</div>
 					<div class="templateswap">
-						<h4 class="visible-phone">Hello</h4>
-						<p><span class="visible-desktop visible-tablet">HELLO.<br /></span>
-						COME ON IN AND MAKE YOURSELF AT HOME.<br />
-						FEEL FREE TO STAY AS LONG AS YOU LIKE.</p>
+						<div class="hometemplate">
+							<h4 class="visible-phone">Hello</h4>
+							<p><span class="visible-desktop visible-tablet">HELLO.</span></p>
+							<p>COME ON IN AND MAKE YOURSELF AT HOME.<br />
+							FEEL FREE TO STAY AS LONG AS YOU LIKE.</p>
+						</div>
 					</div>
 					<div class="finger">
 						<img src="{$workspace}/assets/static/images/finger.png" alt="finger" />
@@ -115,8 +117,8 @@
 	<section class="templates foldup">
 		<div rel="0" class="hometemplate">
 			<h4 class="visible-phone">Hello</h4>
-			<p><span class="visible-desktop visible-tablet">HELLO.<br /></span>
-			COME ON IN AND MAKE YOURSELF AT HOME.<br />
+			<p><span class="visible-desktop visible-tablet">HELLO.</span></p>
+			<p>COME ON IN AND MAKE YOURSELF AT HOME.<br />
 			FEEL FREE TO STAY AS LONG AS YOU LIKE.</p>
 		</div>
 		<div rel="1" class="abouttemplate">
@@ -133,8 +135,8 @@
 		</div>
 		<div rel="4" class="contacttemplate">
 			<h4 class="visible-phone">Contact</h4>
-			<p>WE'D LOVE TO HAVE A CHAT, SO DROP US A LINE OR AN EMAIL AND SEE HOW WE CAN HELP YOU. OUR DOOR IS ALWAYS OPEN.<br />
-TEL: 323.661.1100 EMAIL: <a href="mailto:mail@thefamilybiz.com">MAIL@THEFAMILYBIZ.COM</a></p>
+			<p>WE'D LOVE TO HAVE A CHAT, SO DROP US A LINE OR AN EMAIL AND SEE HOW WE CAN HELP YOU. OUR DOOR IS ALWAYS OPEN.</p>
+			<p>TEL: 323.661.1100 EMAIL: <a href="mailto:mail@thefamilybiz.com">MAIL@THEFAMILYBIZ.COM</a></p>
 
 			<div class="phonesocialmedia visible-phone">
 				<a href="#"><img src="{$workspace}/assets/static/images/facebook.png" /></a>
