@@ -117,7 +117,21 @@ $(function() {
 	
 	// test if we're on a touchscreen device...
 	if(Modernizr.touch) {
-		// if so, do some touch-specific stuff
+		// display the finger
+		$('.finger').addClass('withtouch');
+	
+		// swiping on the bottom section moves
+		// slides using TouchSwipe plugin
+		$('.bottomsection').swipe({
+			// swipeLeft = 'next'
+			swipeLeft:function(event, direction, distance, duration, fingerCount) {
+				window.mySwipe.next();
+			},
+			// swipeRight = 'prev'
+			swipeRight:function(event, direction, distance, duration, fingerCount) {
+				window.mySwipe.prev();
+			}
+		});
 	} else {
 		// if not -- add 'notouch' class to '.mobilearrows'
 		$('.mobilearrows').addClass('notouch');
@@ -167,7 +181,8 @@ $(function() {
 	// swipe, yo!
 	window.mySwipe = new Swipe(document.getElementById('slider'), {
 		callback: function(index) {
-
+			// hide the finger
+			$('.finger').fadeTo(500,0);
 			// swap the bottom section text
 			// account for 'likes' not existing on mobile
 			if(index === 3) {
@@ -210,23 +225,6 @@ $(function() {
 	$('.mobileprev').click(function() {
 		window.mySwipe.prev();
 	});
-	
-	
-	
-	// swiping on the bottom section moves
-	// slides using TouchSwipe plugin
-	$('.bottomsection').swipe({
-		// swipeLeft = 'next'
-		swipeLeft:function(event, direction, distance, duration, fingerCount) {
-			window.mySwipe.next();
-		},
-		// swipeRight = 'prev'
-		swipeRight:function(event, direction, distance, duration, fingerCount) {
-			window.mySwipe.prev();
-		}
-	});
-
-
 
 });
 

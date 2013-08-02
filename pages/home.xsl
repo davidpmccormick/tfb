@@ -49,7 +49,7 @@
 					<li class="relative showlikes">
 						<div class="modalwindow">
 							<div class="closebutton"></div>
-							<div class="prev"></div>
+							<div class="prev" style="display:none;"></div>
 							<div class="next"></div>
 							<div class="inner" rel="1">
 								<h2>POUNDING THE SIDEWALK</h2>
@@ -78,8 +78,8 @@
 			<div class="row">
 				<div class="span12 relative">
 					<div class="mobilearrows">
-						<div class="mobileprev" style="display:none;"></div>
-						<div class="mobilenext"></div>
+						<a href="#" class="mobileprev" style="display:none;"></a>
+						<a href="#" class="mobilenext"></a>
 					</div>
 					<div class="templateswap">
 						<h4 class="visible-phone">Hello</h4>
@@ -87,10 +87,8 @@
 						COME ON IN AND MAKE YOURSELF AT HOME.<br />
 						FEEL FREE TO STAY AS LONG AS YOU LIKE.</p>
 					</div>
-					<div class="visible-phone" style="text-align:center;">
-						<a href="#"><img src="{$workspace}/assets/static/images/facebook.png" /></a>
-						<a href="#"><img src="{$workspace}/assets/static/images/twitter.png" /></a>
-						<a href="#"><img src="{$workspace}/assets/static/images/instagram.png" /></a>		
+					<div class="finger">
+						<img src="{$workspace}/assets/static/images/finger.png" alt="finger" />
 					</div>
 				</div>
 			</div>
