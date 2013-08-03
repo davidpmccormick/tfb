@@ -12,6 +12,26 @@ function slideOffIntro() {
 // document ready
 $(function() {
 
+		function resizeOrReorient() {
+			// change margin-top of 'swipe'
+			var swipeHeight = $('#slider').height();
+			var topSectionHeight = $('.topsection').height();
+			var topMargin = (topSectionHeight - swipeHeight) - 3;
+			$('.sliderwrapper').css('margin-top', topMargin);
+			
+			var currentImageHeight = $('.currentimage').height();
+			$('.pane').css('height', currentImageHeight);
+			
+			var theWidth = $(window).width();
+					
+			// just resize the currently focused image li
+			$('.elements li.currentimage').css('width', theWidth);
+	
+			var theHeight = $(window).height()/1.3;
+			$('.topsection').css('height', theHeight);
+		}
+
+
 	function templateSwap(index) {
 		// swap the bottom section text
 		$('.templateswap').stop().fadeTo(200,0, function() {
@@ -195,27 +215,17 @@ $(function() {
 		}
 	});
 
-
+	// resize logic
 	$(window).resize(function() {
-
-		// change margin-top of 'swipe'
-		var swipeHeight = $('#slider').height();
-		var topSectionHeight = $('.topsection').height();
-		var topMargin = (topSectionHeight - swipeHeight) - 3;
-		$('.sliderwrapper').css('margin-top', topMargin);
-		
-		var currentImageHeight = $('.currentimage').height();
-		$('.pane').css('height', currentImageHeight);
-		
-		var theWidth = $(window).width();
-				
-		// just resize the currently focused image li
-		$('.elements li.currentimage').css('width', theWidth);
-
-		var theHeight = $(window).height()/1.3;
-		$('.topsection').css('height', theHeight);
-		
+		resizeOrReorient();
 	});
+	// orientation change logic
+	
+	$(window).bind( 'orientationchange', function(e){
+		resizeOrReorient();
+	});
+	
+	
 	
 	// swipe, yo!
 	window.mySwipe = new Swipe(document.getElementById('slider'), {

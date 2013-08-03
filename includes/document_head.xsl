@@ -13,14 +13,8 @@
 			
 			<title><xsl:call-template name="page-title"/></title>
 
-			<link rel="shortcut icon" href="/favicon.ico" />
 			<link rel="icon" type="images/png" href="{$workspace}/assets/images/favicon.png" />
-			<link rel="stylesheet" media="screen" href="{$workspace}/css/main.css" />
-			
-			<xsl:comment>[if !(IE)]<![CDATA[><!]]></xsl:comment>
-				<!-- link to any non-IE stylesheets/JS -->
-			<xsl:comment><![CDATA[<!]]>[endif]</xsl:comment>	
-			
+			<link rel="stylesheet" media="screen" href="{$workspace}/css/main.css" />			
 			<script src="{$workspace}/js/libs/modernizr.min.js"></script>
 			
 			<xsl:comment><![CDATA[[if (gte IE 6)&(lte IE 8)]><script type="text/javascript" src="]]><xsl:value-of select="$root"/><![CDATA[/workspace/components/selectivizr/selectivizr.js"></script><![endif]]]></xsl:comment>
