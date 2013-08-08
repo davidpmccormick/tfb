@@ -15,7 +15,9 @@ $red: red;
 $regularRockwell: 14px;
 $regullarScript: $regularRockwell + 3;
 $largeRockwell: $regularRockwell + 3;
+$extraLargeRockwell: $largeRockwell + 5;
 $largeScript: $largeRockwell + 3;
+$extraLargeScript: $largeScript + 5;
 $regularMagallanes: 16px;
 $largeMagallanes: $regularMagallanes + 3;
 
@@ -59,7 +61,12 @@ h4 {
 		cursor: pointer;
 		width: 212px;
 		height: 123px;
-		@media (min-width: 1200px) {
+		@media (min-width: 1800px) {
+			width: 300px;
+			height: 180px;
+			margin-left: -150px;
+		}
+		@media (min-width: 1200px) and (max-width: 1799px) {
 			width: 276px;
 			height: 160px;
 			margin-left: -138px;
@@ -110,6 +117,9 @@ img.bgimage {
 				&.currentanchor {
 					@include thirsty;
 					font-size: $regullarScript;
+					@media (min-width: 1800px) {
+						font-size: $extraLargeScript;
+					}
 					@media (min-width: 1200px) {
 						font-size: $largeScript;
 					}
@@ -125,14 +135,26 @@ img.bgimage {
 
 ul.leftnav {
 	float: left;
+	@media (min-width: 1800px) {
+		margin-left: -200px;
+	}
+	@include transition(margin-left 0.3s ease);
 }
 
 ul.rightnav {
 	float: right;
+	@media (min-width: 1800px) {
+		margin-right: -200px;
+	}
+	@include transition(margin-right 0.3s ease);
 }
 
 ul.leftnav li, ul.rightnav li {
 	float:left; margin-right: 100px;
+	@media (min-width: 1800px) {
+		margin-right: 300px;
+		font-size: $extraLargeRockwell;
+	}
 	@media (min-width: 1200px) {
 		margin-right: 200px;
 	}
