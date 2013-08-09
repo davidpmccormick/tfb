@@ -16,7 +16,7 @@ $(function() {
 			// change margin-top of 'swipe'
 			var swipeHeight = $('#slider').height();
 			var topSectionHeight = $('.topsection').height();
-			var topMargin = (topSectionHeight - swipeHeight) - 30;
+			var topMargin = (topSectionHeight - swipeHeight) - 50;
 			$('.sliderwrapper').css('margin-top', topMargin);
 			
 			var currentImageHeight = $('.currentimage').height();
@@ -296,7 +296,7 @@ $(window).load(function() {
 			if($('.swipe').css('visibility') === 'visible') {
 				var swipeHeight = $('#slider').height();
 				var topSectionHeight = $('.topsection').height();
-				var topMargin = (topSectionHeight - swipeHeight) - 30;
+				var topMargin = (topSectionHeight - swipeHeight) - 50;
 				$('.sliderwrapper').css({'margin-top': topMargin});
 			} else {
 				doResize();

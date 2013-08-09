@@ -82,9 +82,9 @@
 	
 	<section class="bottomsection clearfix">
 		<div class="hidden-phone" style="position: absolute; right:10px; top:37px;">
-				<a href="http://www.facebook.com/thefambiz" target="_blank"></span></a><br />
-				<a href="http://www.twitter.com/thefambiz" target="_blank"></span></a><br />
-				<a href="http://www.instagram.com/thefambiz" target="_blank"></span></a><br />
+			<a href="http://www.facebook.com/thefambiz" target="_blank"><span class="facebook"></span></a><br />
+			<a href="http://www.twitter.com/thefambiz" target="_blank"><span class="twitter"></span></a><br />
+			<a href="http://www.instagram.com/thefambiz" target="_blank"><span class="instagram"></span></a><br />
 		</div>
 		<div class="container">
 			<div class="row">
