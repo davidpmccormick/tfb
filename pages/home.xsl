@@ -59,10 +59,6 @@
 						<div class="showlikes" rel="3"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
 						<div class="showlikes" rel="4"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
 						<div class="showlikes" rel="5"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
-						<div class="showlikes" rel="6"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
-						<div class="showlikes" rel="7"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
-						<div class="showlikes" rel="8"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
-						<div class="showlikes" rel="9"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
 						
 						<div class="modalwindow">
 							<div class="closebutton"></div>
@@ -147,7 +143,7 @@
 		</div>
 	</section>
 	
-	<section class="likestemplates foldup" rel="9">
+	<section class="likestemplates foldup" rel="5">
 		<!-- this rel = total templates, for JS --> 
 		<div rel="1" class="likestemplate">
 			<h2>POUNDING THE SIDEWALK</h2>
@@ -167,22 +163,6 @@
 		</div>
 		<div rel="5" class="likestemplate">
 			<h2>THE FIFTH</h2>
-			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
-		</div>
-		<div rel="6" class="likestemplate">
-			<h2>SIX!</h2>
-			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
-		</div>
-		<div rel="7" class="likestemplate">
-			<h2>NUMBER SEVEN</h2>
-			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
-		</div>
-		<div rel="8" class="likestemplate">
-			<h2>THIS IS EIGHT</h2>
-			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
-		</div>
-		<div rel="9" class="likestemplate">
-			<h2>LAST ONE: NINE</h2>
 			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
 		</div>
 	</section>

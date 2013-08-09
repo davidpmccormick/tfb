@@ -20,6 +20,7 @@ $largeScript: $largeRockwell + 3;
 $extraLargeScript: $largeScript + 5;
 $regularMagallanes: 16px;
 $largeMagallanes: $regularMagallanes + 3;
+$maxMagallanes: $largeMagallanes + 2;
 
 body {
 	background: $orange;
@@ -28,12 +29,16 @@ body {
 		padding: 0;
 	}
 }
+a:active, a:selected, a:visited { 
+	border: none;
+	outline: none;
+}
 
 a {
 	color: inherit;
 	@include transition-property(color);
   @include transition-duration(0.2s);
-	&:hover {
+	&:hover, &:active {
 		text-decoration: none;
 		color: #ddd;
 	}
@@ -81,13 +86,9 @@ h4 {
 		margin-left: -106px;
 		z-index: 1;
 		background-size: contain;
-// 		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-// src='../assets/static/images/logo.png',
-// sizingMethod='scale');
-
-// 		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(
-// src='../assets/static/images/logo.png',
-// sizingMethod='scale')";
+/* The url is relative to the document, not to the css file! */
+    /* Prefer absolute urls to avoid confusion. */
+    -ms-behavior: url(/tfb/workspace/css/backgroundsize.min.htc);
 		@include transition(height 0.3s ease, width 0.3s ease, min-height 0.3s ease, max-height 0.3s ease);
 	}
 }
@@ -118,7 +119,7 @@ img.bgimage {
 			
 			a {
 				color: $gray;
-				&:hover {
+				&:hover, &:active {
 					text-decoration: none;
 				}
 				&.currentanchor {
@@ -176,12 +177,12 @@ ul.leftnav li, ul.rightnav li {
 
 .scrollcontainer {
 	position: absolute;
-	bottom: 50px;
+	bottom: 0px;
 	@media (min-width: 1200px) {
 		bottom: 0;
 	}
 	@media (min-width: 768px) and (max-width: 979px) {
-		bottom: 70px;
+		bottom: 0px;
 	}
 	@include transition(bottom 0.5s ease);
 	left: 0;
@@ -193,11 +194,18 @@ ul.leftnav li, ul.rightnav li {
 	position: relative;
 	@include magallanes;
 	font-size: $regularMagallanes;
+	@media (min-width: 1200px) {
+		font-size: $maxMagallanes;
+		line-height: 1.3;
+	}
 	.hometemplate {
 		font-size: $largeMagallanes;
 		line-height: 1.3;
 		@media (max-width: 480px) {
 			font-size: 16px;
+		}
+		@media (min-width: 1200px) {
+			font-size: 25px;
 		}
 	}
 	text-align: center;
@@ -228,9 +236,9 @@ ul.leftnav li, ul.rightnav li {
 	width: 400px;
 	margin-left: -200px;
 	@media (min-width: 768px) and (max-width: 979px) {
-		width: 350px;
-		margin-left: -175px;
-		bottom: 40px;
+		width: 400px;
+		margin-left: -200px;
+		bottom: 20px;
 	}
 	@media (min-width: 1200px) {
 		width: 500px;
@@ -240,9 +248,9 @@ ul.leftnav li, ul.rightnav li {
 	@include transition(width 0.5s ease, margin-left 0.5s ease, bottom 0.5s ease);
 	bottom: 60px;
 	left: 50%;
-	background: rgb(220,220,220);
-	background: rgba(255,255,255,0.8);
-	border-radius: 10px;
+	background: rgb(255,255,255);
+	border-radius: 10px 10px 10px 10px;
+	behavior: url(/tfb/workspace/css/pie/PIE.htc);
 	color: $darkGray;
 	z-index: 2;
 	.closebutton {
@@ -277,7 +285,7 @@ ul.leftnav li, ul.rightnav li {
 		padding: 20px 30px 45px;
 		a {
 			color: $red;
-			&:hover {
+			&:hover, &:active {
 				text-decoration: none;
 				color: darken($red, 20%);
 			}
@@ -291,6 +299,7 @@ ul.leftnav li, ul.rightnav li {
 		@include magallanes;
 	}
 }
+
 
 div.pane {
 	overflow: hidden;
@@ -418,19 +427,15 @@ img {
 	position:absolute;
 	height:100%;
 	cursor: pointer;
-/*
-	background: $orange;
-	opacity: 0.1;
-*/
-	&[rel='1'] { left:29%; width:4.2%; }
-	&[rel='2'] { left:34%; width:3.5%; }
-	&[rel='3'] { left:38%; width:4.7%; }
-	&[rel='4'] { left:43%; width:4%; }
-	&[rel='5'] { left:47.3%; width:4.5%; }
-	&[rel='6'] { left:52.2%; width:3.9%; }
-	&[rel='7'] { left:56.2%; width:3%; }
-	&[rel='8'] { left:59.5%; width:4%; }
-	&[rel='9'] { left:64.5%; width:5%; }
+
+	// background: $orange;
+	// opacity: 0.2;
+
+	&[rel='1'] { left:36.2%; width:4%; }
+	&[rel='2'] { left:43.2%; width:5.5%; }
+	&[rel='3'] { left:50.5%; width:3.5%; }
+	&[rel='4'] { left:55.8%; width:5%; }
+	&[rel='5'] { left:60.8%; width:3.5%; }
 }
 
 .showlikes img {

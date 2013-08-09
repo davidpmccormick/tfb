@@ -121,7 +121,7 @@ $(function() {
 		
 		$('.inner').attr('rel', likeNumber).fadeTo(200,0, function() {
 			$('.inner').html(initialLike).fadeTo(200,1);
-			$('.modalwindow').stop().fadeTo(200,1);
+			$('.modalwindow').stop().fadeTo(200,0.9);
 		});
 	});
 	
