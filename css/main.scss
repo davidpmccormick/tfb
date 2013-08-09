@@ -86,8 +86,6 @@ h4 {
 		margin-left: -106px;
 		z-index: 1;
 		background-size: contain;
-/* The url is relative to the document, not to the css file! */
-    /* Prefer absolute urls to avoid confusion. */
     -ms-behavior: url(/tfb/workspace/css/backgroundsize.min.htc);
 		@include transition(height 0.3s ease, width 0.3s ease, min-height 0.3s ease, max-height 0.3s ease);
 	}
@@ -300,6 +298,31 @@ ul.leftnav li, ul.rightnav li {
 	}
 }
 
+.facebook, .twitter, .instagram {
+	width: 33px;
+	height: 33px;
+	display: inline-block;
+	@media (min-width: 1200px) {
+		width: 50px;
+		height: 50px;
+	}
+}
+
+.facebook {
+	background: url('../assets/static/images/facebook.png') no-repeat center center;
+		background-size: contain;
+		-ms-behavior: url(/tfb/workspace/css/backgroundsize.min.htc);
+}
+.twitter {
+	background: url('../assets/static/images/twitter.png') no-repeat center center;
+	background-size: contain;
+	-ms-behavior: url(/tfb/workspace/css/backgroundsize.min.htc);
+}
+.instagram {
+	background: url('../assets/static/images/instagram.png') no-repeat center center;
+	background-size: contain;
+	-ms-behavior: url(/tfb/workspace/css/backgroundsize.min.htc);
+}
 
 div.pane {
 	overflow: hidden;
@@ -319,7 +342,12 @@ ul.elements li {
 	margin: 0;
 	text-align: center;
 	position: relative;
-
+	&:nth-child(1) {
+		margin-top:-30px;
+	}
+	&:nth-child(2) {
+		margin-top:-20px;
+	}
 	img {
 		width: 100%;
 	}
@@ -409,18 +437,29 @@ img {
 	display: none;
 	position: absolute;
 	background: url('../assets/static/images/intro.png') no-repeat center center;
+	background-size: contain;
+	-ms-behavior: url(/tfb/workspace/css/backgroundsize.min.htc);
 	top: 50px;
 	width: 400px;
 	height: 503px;
 	left: 50%;
 	margin-left: -200px;
+
+	@media (min-width: 1200px) {
+		top: 100px;
+		width: 600px;
+		height: 700px;
+		margin-left: -300px;
+	}
+	
 	@media (max-width: 480px) {
 		top: 30px;
 		width: 250px;
 		height:300px;
 		margin-left: -125px;
-		background-size: contain;
+
 	}
+	@include transition(top 0.3s ease);
 }
 
 .showlikes {

@@ -286,7 +286,7 @@ $(window).load(function() {
 		if($('.introimagecontainer').hasClass('start')) {
 			slideOffIntro();
 		}
-	}, 500);
+	}, 5000);
 
 	// check if mySwipe exists -- once it does,
 	// make change the swipe margin-top

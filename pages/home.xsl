@@ -82,9 +82,9 @@
 	
 	<section class="bottomsection clearfix">
 		<div class="hidden-phone" style="position: absolute; right:10px; top:37px;">
-			<a href="#"><img src="{$workspace}/assets/static/images/facebook.png" /></a><br />
-			<a href="#"><img src="{$workspace}/assets/static/images/twitter.png" /></a><br />
-			<a href="#"><img src="{$workspace}/assets/static/images/instagram.png" /></a><br />			
+				<a href="http://www.facebook.com/thefambiz" target="_blank"></span></a><br />
+				<a href="http://www.twitter.com/thefambiz" target="_blank"></span></a><br />
+				<a href="http://www.instagram.com/thefambiz" target="_blank"></span></a><br />
 		</div>
 		<div class="container">
 			<div class="row">
@@ -97,8 +97,7 @@
 						<div class="hometemplate">
 							<h4 class="visible-phone">Hello</h4>
 							<p><span class="visible-desktop visible-tablet">HELLO.</span></p>
-							<p>COME ON IN AND MAKE YOURSELF AT HOME.<br />
-							FEEL FREE TO STAY AS LONG AS YOU LIKE.</p>
+							<xsl:copy-of select="text/entry/home" />
 						</div>
 					</div>
 					<div class="finger">
@@ -114,30 +113,28 @@
 		<div rel="0" class="hometemplate">
 			<h4 class="visible-phone">Hello</h4>
 			<p><span class="visible-desktop visible-tablet">HELLO.</span></p>
-			<p>COME ON IN AND MAKE YOURSELF AT HOME.<br />
-			FEEL FREE TO STAY AS LONG AS YOU LIKE.</p>
+			<xsl:copy-of select="text/entry/home" />
 		</div>
 		<div rel="1" class="abouttemplate">
 			<h4 class="visible-phone">About</h4>
-			<p>AS WITH EVERY FAMILY, WE KNOW THAT ONE SIZE DOES NOT FIT ALL, SO WE CREATE DIGITAL MARKETING EXPERIENCES THAT ARE JUST RIGHT FOR YOU AND YOUR AUDIENCE.</p>
+			<xsl:copy-of select="text/entry/about" />
 		</div>
 		<div rel="2" class="worktemplate">
 			<h4 class="visible-phone">Work</h4>
-			<p>WE HAVE WORKED WITH ENTERTAINMENT PROPERTIES AND BRANDS SUCH AS UNIVERSAL PICTURES, ULTRA RECORDS, THE LIGHT GROUP AND MINISTRY OF SOUND TO CREATE INTERACTIVE, ENGAGING CONTENT AND DIGITAL MARKETING CAMPAIGNS.</p>
+			<xsl:copy-of select="text/entry/work" />
 		</div>
 		<div rel="3" class="likestemplate">
 			<h4 class="visible-phone">Likes</h4>
-			<p>WE LOVE TO PLAY AS HARD AS WE WORK, WHETHER IT BE HIKING, WALKING THE DOGS, DOING PILATES, GOING TO MUSIC GIGS, OR SIMPLY JUICING AND COOKING AT HOME. CHECK OUT OUR BOOKSHELF TO SEE WHAT WE GET UP TO IN OUR DOWNTIME.</p>
+			<xsl:copy-of select="text/entry/likes" />
 		</div>
 		<div rel="4" class="contacttemplate">
 			<h4 class="visible-phone">Contact</h4>
-			<p>WE'D LOVE TO HAVE A CHAT, SO DROP US A LINE OR AN EMAIL AND SEE HOW WE CAN HELP YOU. OUR DOOR IS ALWAYS OPEN.</p>
-			<p>TEL: 323.661.1100 EMAIL: <a href="mailto:mail@thefamilybiz.com">MAIL@THEFAMILYBIZ.COM</a></p>
-
+			<xsl:copy-of select="text/entry/contact" />
+	
 			<div class="phonesocialmedia visible-phone">
-				<a href="#"><img src="{$workspace}/assets/static/images/facebook.png" /></a>
-				<a href="#"><img src="{$workspace}/assets/static/images/twitter.png" /></a>
-				<a href="#"><img src="{$workspace}/assets/static/images/instagram.png" /></a>
+				<a href="http://www.facebook.com/thefambiz" target="_blank"><span class="facebook"></span></a>
+				<a href="http://www.twitter.com/thefambiz" target="_blank"><span class="twitter"></span></a>
+				<a href="http://www.instagram.com/thefambiz" target="_blank"><span class="instagram"></span></a>
 			</div>		
 
 		</div>
@@ -146,24 +143,19 @@
 	<section class="likestemplates foldup" rel="5">
 		<!-- this rel = total templates, for JS --> 
 		<div rel="1" class="likestemplate">
-			<h2>POUNDING THE SIDEWALK</h2>
-			<p>SUZANN RECENTLY COMPLETED THE L.A. MARATHON IN A RESPECTABLE 3.5 HOURS. THE BLISTERS HAVE JUST ABOUT HEALED -TAKE A LOOK AT <a href="#">PICTURES OF HER CROSSING THE LINE</a> - PHEW!</p>
+			<xsl:copy-of select="text/entry/nights-out" />
 		</div>
 		<div rel="2" class="likestemplate">
-			<h2>LOREM IPSUM</h2>
-			<p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT. RECUSANDAE ISTE ALIQUID SEQUI VOLUPTATIBUS ENIM NIHIL IN QUOD TEMPORA. OFFICIA, EXCEPTURI QUOS DOLOREM HARUM CUM NEQUE COMMODI! INVENTORE OBCAECATI DELENITI QUIDEM.</p>
+			<xsl:copy-of select="text/entry/culinary-projects" />
 		</div>
 		<div rel="3" class="likestemplate">
-			<h2>DOLOR SIT AMET</h2>
-			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
+			<xsl:copy-of select="text/entry/hiking" />
 		</div>
 		<div rel="4" class="likestemplate">
-			<h2>NUMBER FOUR</h2>
-			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
+			<xsl:copy-of select="text/entry/juice" />
 		</div>
 		<div rel="5" class="likestemplate">
-			<h2>THE FIFTH</h2>
-			<p>CONSECTETUR ADIPISICING ELIT. NECESSITATIBUS, APERIAM, OBCAECATI, VOLUPTAS, ULLAM INVENTORE ESSE EUM VELIT REM MINUS EST ID SOLUTA MODI! SUNT, QUISQUAM NUMQUAM CULPA NATUS IURE VOLUPTATE.</p>
+			<xsl:copy-of select="text/entry/dogs" />
 		</div>
 	</section>
 
