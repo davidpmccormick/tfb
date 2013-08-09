@@ -16,7 +16,7 @@ $(function() {
 			// change margin-top of 'swipe'
 			var swipeHeight = $('#slider').height();
 			var topSectionHeight = $('.topsection').height();
-			var topMargin = (topSectionHeight - swipeHeight) - 3;
+			var topMargin = (topSectionHeight - swipeHeight) - 30;
 			$('.sliderwrapper').css('margin-top', topMargin);
 			
 			var currentImageHeight = $('.currentimage').height();
@@ -286,7 +286,7 @@ $(window).load(function() {
 		if($('.introimagecontainer').hasClass('start')) {
 			slideOffIntro();
 		}
-	}, 2000);
+	}, 500);
 
 	// check if mySwipe exists -- once it does,
 	// make change the swipe margin-top
@@ -296,7 +296,7 @@ $(window).load(function() {
 			if($('.swipe').css('visibility') === 'visible') {
 				var swipeHeight = $('#slider').height();
 				var topSectionHeight = $('.topsection').height();
-				var topMargin = (topSectionHeight - swipeHeight) - 3;
+				var topMargin = (topSectionHeight - swipeHeight) - 30;
 				$('.sliderwrapper').css({'margin-top': topMargin});
 			} else {
 				doResize();

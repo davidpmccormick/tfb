@@ -81,6 +81,13 @@ h4 {
 		margin-left: -106px;
 		z-index: 1;
 		background-size: contain;
+// 		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+// src='../assets/static/images/logo.png',
+// sizingMethod='scale');
+
+// 		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(
+// src='../assets/static/images/logo.png',
+// sizingMethod='scale')";
 		@include transition(height 0.3s ease, width 0.3s ease, min-height 0.3s ease, max-height 0.3s ease);
 	}
 }
@@ -123,7 +130,7 @@ img.bgimage {
 					@media (min-width: 1200px) {
 						font-size: $largeScript;
 					}
-					text-transform: capitalize;
+					text-transform: none;
 					border-bottom: 2px solid $orange;
 					font-size: 17px;
 					font-weight: 500;
@@ -169,7 +176,14 @@ ul.leftnav li, ul.rightnav li {
 
 .scrollcontainer {
 	position: absolute;
-	bottom: 10px;
+	bottom: 50px;
+	@media (min-width: 1200px) {
+		bottom: 0;
+	}
+	@media (min-width: 768px) and (max-width: 979px) {
+		bottom: 70px;
+	}
+	@include transition(bottom 0.5s ease);
 	left: 0;
 	right: 0;
 	width: 100%;
@@ -182,6 +196,9 @@ ul.leftnav li, ul.rightnav li {
 	.hometemplate {
 		font-size: $largeMagallanes;
 		line-height: 1.3;
+		@media (max-width: 480px) {
+			font-size: 16px;
+		}
 	}
 	text-align: center;
 	padding-top: 40px;
@@ -223,6 +240,7 @@ ul.leftnav li, ul.rightnav li {
 	@include transition(width 0.5s ease, margin-left 0.5s ease, bottom 0.5s ease);
 	bottom: 60px;
 	left: 50%;
+	background: rgb(220,220,220);
 	background: rgba(255,255,255,0.8);
 	border-radius: 10px;
 	color: $darkGray;
@@ -280,6 +298,7 @@ div.pane {
 	position: relative;
 }
 
+
 ul.elements {
 	margin: 0;
 }
@@ -291,6 +310,7 @@ ul.elements li {
 	margin: 0;
 	text-align: center;
 	position: relative;
+
 	img {
 		width: 100%;
 	}
