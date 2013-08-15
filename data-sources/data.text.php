@@ -23,10 +23,15 @@
 				'work: formatted',
 				'contact: formatted',
 				'nights-out: formatted',
+				'nights-out-link',
 				'culinary-projects: formatted',
+				'culinary-projects-link',
 				'hiking: formatted',
+				'hiking-link',
 				'juice: formatted',
-				'dogs: formatted'
+				'juice-link',
+				'dogs: formatted',
+				'dogs-link'
 		);
 		
 
@@ -43,7 +48,7 @@
 					'website' => 'http://localhost:8888/tfb',
 					'email' => 'davidpmccormick@gmail.com'),
 				'version' => 'Symphony 2.3.3',
-				'release-date' => '2013-08-09T16:32:57+00:00'
+				'release-date' => '2013-08-15T09:33:22+00:00'
 			);
 		}
 

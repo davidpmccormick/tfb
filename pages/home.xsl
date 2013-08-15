@@ -5,12 +5,14 @@
 
 <xsl:template match="data">
 
+
 	<div class="introimagecontainer start">
 		<div class="introimage"></div>
 	</div>
 	
 	
-	<section class="topsection clearfix">
+	<section class="topsection clearfix relative">
+		<div class="transparentwhite"></div>
 		<div class="gotopane" rel="0" href="#0"><div class="logo" /></div>
 		<img class="bgimage" src="{$workspace}/assets/static/images/bg.png" alt="background" />
 		<div class="container">
@@ -81,7 +83,7 @@
 	</section>
 	
 	<section class="bottomsection clearfix">
-		<div class="hidden-phone" style="position: absolute; right:10px; top:37px;">
+		<div class="hidden-phone" style="position: absolute; right:10px; top:15px;">
 			<a href="http://www.facebook.com/thefambiz" target="_blank"><span class="facebook"></span></a><br />
 			<a href="http://www.twitter.com/thefambiz" target="_blank"><span class="twitter"></span></a><br />
 			<a href="http://www.instagram.com/thefambiz" target="_blank"><span class="instagram"></span></a><br />
@@ -100,9 +102,7 @@
 							<xsl:copy-of select="text/entry/home" />
 						</div>
 					</div>
-					<div class="finger">
-						<img src="{$workspace}/assets/static/images/finger.png" alt="finger" />
-					</div>
+					<div class="finger"></div>
 				</div>
 			</div>
 		</div>
@@ -141,21 +141,26 @@
 	</section>
 	
 	<section class="likestemplates foldup" rel="5">
-		<!-- this rel = total templates, for JS --> 
+		<!-- this rel = total templates, for JS -->
 		<div rel="1" class="likestemplate">
-			<xsl:copy-of select="text/entry/nights-out" />
+			<xsl:copy-of select="text/entry/juice" />
+			<a href="{text/entry/juice-link}" target="_blank">View pictures</a>
 		</div>
 		<div rel="2" class="likestemplate">
-			<xsl:copy-of select="text/entry/culinary-projects" />
+			<xsl:copy-of select="text/entry/nights-out" />
+			<a href="{text/entry/nights-out-link}" target="_blank">View pictures</a>
 		</div>
 		<div rel="3" class="likestemplate">
-			<xsl:copy-of select="text/entry/hiking" />
+			<xsl:copy-of select="text/entry/dogs" />
+			<a href="{text/entry/dogs-link}" target="_blank">View pictures</a>
 		</div>
 		<div rel="4" class="likestemplate">
-			<xsl:copy-of select="text/entry/juice" />
+			<xsl:copy-of select="text/entry/culinary-projects" />
+			<a href="{text/entry/culinary-projects-link}" target="_blank">View pictures</a>
 		</div>
 		<div rel="5" class="likestemplate">
-			<xsl:copy-of select="text/entry/dogs" />
+			<xsl:copy-of select="text/entry/hiking" />
+			<a href="{text/entry/hiking-link}" target="_blank">View pictures</a>
 		</div>
 	</section>
 

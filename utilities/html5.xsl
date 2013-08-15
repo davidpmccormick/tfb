@@ -24,6 +24,7 @@
 	<xsl:call-template name="document_head" />
 	
 		<body rel="{$workspace}">
+			<div class="tryportrait"><h2>Try portrait&#8230;</h2></div>
 			<section id="maincontent" class="section">
 				<xsl:apply-templates />
 			</section>

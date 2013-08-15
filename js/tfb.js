@@ -12,7 +12,36 @@ function slideOffIntro() {
 // document ready
 $(function() {
 
-		function resizeOrReorient() {
+	// if we load in landscape on a small screen, encourage portrait viewing
+	if($(window).width() < 650 && $(window).width() > $(window).height()) {
+		$('body').addClass('hiddencontent');
+		$('#maincontent').css('visibility', 'hidden');
+	}
+
+	function tfbResize() {
+		// change margin-top of 'swipe'
+		var swipeHeight = $('#slider').height();
+		var topSectionHeight = $('.topsection').height();
+		var topMargin = (topSectionHeight - swipeHeight) - 50;
+		$('.sliderwrapper').css('margin-top', topMargin);
+		
+		var currentImageHeight = $('.currentimage').height();
+		$('.pane').css('height', currentImageHeight);
+		
+		var theWidth = $(window).width();
+				
+		// just resize the currently focused image li
+		$('.elements li.currentimage').css('width', theWidth);
+
+		var theHeight = $(window).height()/1.33;
+		$('.topsection').css('height', theHeight);
+		
+	}
+
+	function tfbReorient() {
+		// need to wait for a bit (500ms) to allow for the reorient 
+		// animation to complete before remeasuring dimensions
+		setTimeout(function() {
 			// change margin-top of 'swipe'
 			var swipeHeight = $('#slider').height();
 			var topSectionHeight = $('.topsection').height();
@@ -27,10 +56,11 @@ $(function() {
 			// just resize the currently focused image li
 			$('.elements li.currentimage').css('width', theWidth);
 	
-			var theHeight = $(window).height()/1.3;
+			var theHeight = $(window).height()/1.33;
 			$('.topsection').css('height', theHeight);
-		}
-
+		}, 500);
+		
+	}
 
 	function templateSwap(index) {
 		// swap the bottom section text
@@ -62,9 +92,19 @@ $(function() {
 	
 	$('.gotopane').click(function(){
 		var theIndex = parseInt($(this).attr('rel'),10);
+		// if the logo's out of shot, move it back in (not on small screens)
+		if(($('.logo').css('top') !== '15px') && ($(window).width() > 480) ) {
+			$('.logo').stop().animate({'top': '15px'}, 500);
+		}
 		// synchronise swipe/scrollTo slides
 		if(theIndex < 3) {
 			window.mySwipe.slide(theIndex, 500);
+		} else if (theIndex === 3) {
+			// move up the logo to stop it clashing
+			var imagesFromTop = $('.scrollcontainer').offset().top;
+			if (imagesFromTop < 120) {
+				$('.logo').stop().animate({'top': '-200px'}, 500);
+			}
 		} else if(theIndex === 4) {
 			// account for no 'likes' on mobile
 			window.mySwipe.slide(3, 500);
@@ -95,7 +135,7 @@ $(function() {
 	var theWidth = $(window).width();
 	$('.elements li').css('width', theWidth);
 
-	var theHeight = $(window).height()/1.4;
+	var theHeight = $(window).height()/1.33;
 	$('.topsection').css('height', theHeight);
 	
 	
@@ -176,8 +216,10 @@ $(function() {
 	
 	// test if we're on a touchscreen device...
 	if(Modernizr.touch) {
-		// display the finger
-		$('.finger').addClass('withtouch');
+		// display the finger and white bg if we're on small screens
+		if($(window).width() < 768) {
+			$('.finger, .transparentwhite').addClass('withtouch');
+		}
 	
 		// swiping on the bottom section moves
 		// slides using TouchSwipe plugin
@@ -217,12 +259,22 @@ $(function() {
 
 	// resize logic
 	$(window).resize(function() {
-		resizeOrReorient();
+		tfbResize();
 	});
 	// orientation change logic
 	
 	$(window).bind( 'orientationchange', function(e){
-		resizeOrReorient();
+		// if it's small width and in portrait, hide the content
+		if($(window).width() < 650 && $(window).width() > $(window).height()) {
+			$('body').addClass('hiddencontent');
+			$('#maincontent').css('visibility', 'hidden');
+		// if we're reorienting to portrait and the content's hidden, redisplay it
+		} else if($('body').hasClass('hiddencontent') && $(window).width() < $(window).height()) {
+			$('body').removeClass('hiddencontent');
+			$('#maincontent').css('visibility', 'visible');
+		}
+		tfbReorient();
+		
 	});
 	
 	
@@ -231,7 +283,7 @@ $(function() {
 	window.mySwipe = new Swipe(document.getElementById('slider'), {
 		callback: function(index) {
 			// hide the finger
-			$('.finger').fadeTo(500,0);
+			$('.finger, .transparentwhite').fadeTo(500,0);
 			// swap the bottom section text
 			// account for 'likes' not existing on mobile
 			if(index === 3) {
@@ -253,9 +305,7 @@ $(function() {
 			}
 			if(index === 3) {
 				$('.mobilenext').fadeTo(200,0);
-			}
-			
-			
+			}			
 		},
 		continuous: false
 	});
@@ -286,7 +336,15 @@ $(window).load(function() {
 		if($('.introimagecontainer').hasClass('start')) {
 			slideOffIntro();
 		}
-	}, 5000);
+	}, 3000);
+	
+	// after 4.5 seconds, fade
+	// out the overlay finger
+	setTimeout(function() {
+		$('.finger, .transparentwhite').fadeTo(200,0, function() {
+			$('.finger, .transparentwhite').remove();
+		});
+	}, 5500);
 
 	// check if mySwipe exists -- once it does,
 	// make change the swipe margin-top
