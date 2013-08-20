@@ -12,10 +12,12 @@ function slideOffIntro() {
 // document ready
 $(function() {
 
-	// if we load in landscape on a small screen, encourage portrait viewing
-	if($(window).width() < 650 && $(window).width() > $(window).height()) {
-		$('body').addClass('hiddencontent');
-		$('#maincontent').css('visibility', 'hidden');
+	// if we load in landscape on a small screen, encourage portrait viewing... only if the device can reorient
+	if(window.DeviceOrientationEvent) {
+		if($(window).width() < 650 && $(window).width() > $(window).height()) {
+			$('body').addClass('hiddencontent');
+			$('#maincontent').css('visibility', 'hidden');
+		}
 	}
 
 	function tfbResize() {
@@ -24,22 +26,22 @@ $(function() {
 		var topSectionHeight = $('.topsection').height();
 		var topMargin = (topSectionHeight - swipeHeight) - 50;
 		$('.sliderwrapper').css('margin-top', topMargin);
-		
+
 		var currentImageHeight = $('.currentimage').height();
 		$('.pane').css('height', currentImageHeight);
-		
+
 		var theWidth = $(window).width();
-				
+
 		// just resize the currently focused image li
 		$('.elements li.currentimage').css('width', theWidth);
 
 		var theHeight = $(window).height()/1.33;
 		$('.topsection').css('height', theHeight);
-		
+
 	}
 
 	function tfbReorient() {
-		// need to wait for a bit (500ms) to allow for the reorient 
+		// need to wait for a bit (500ms) to allow for the reorient
 		// animation to complete before remeasuring dimensions
 		setTimeout(function() {
 			// change margin-top of 'swipe'
@@ -47,19 +49,19 @@ $(function() {
 			var topSectionHeight = $('.topsection').height();
 			var topMargin = (topSectionHeight - swipeHeight) - 50;
 			$('.sliderwrapper').css('margin-top', topMargin);
-			
+
 			var currentImageHeight = $('.currentimage').height();
 			$('.pane').css('height', currentImageHeight);
-			
+
 			var theWidth = $(window).width();
-					
+
 			// just resize the currently focused image li
 			$('.elements li.currentimage').css('width', theWidth);
-	
+
 			var theHeight = $(window).height()/1.33;
 			$('.topsection').css('height', theHeight);
 		}, 500);
-		
+
 	}
 
 	function templateSwap(index) {
@@ -80,7 +82,7 @@ $(function() {
 		$('.pane li:eq(' + index + ')').addClass('currentimage');
 	}
 
-	// make sure the intro image is loaded before it's faded up	
+	// make sure the intro image is loaded before it's faded up
 	var workspaceDir = $('body').attr('rel');
 	$('<img/>').attr('src',  workspaceDir + '/assets/static/images/intro.png').load(function() {
 		$('.introimage').fadeTo(200,1);
@@ -89,7 +91,7 @@ $(function() {
 	$('.introimagecontainer').click(function() {
 		slideOffIntro();
 	});
-	
+
 	$('.gotopane').click(function(){
 		var theIndex = parseInt($(this).attr('rel'),10);
 		// if the logo's out of shot, move it back in (not on small screens)
@@ -112,24 +114,24 @@ $(function() {
 		} else {
 			window.mySwipe.slide(0, 500);
 		}
-		
+
 		// hide the modal window
 		$('.modalwindow').fadeTo(200, 0, function() {
 			$(this).hide();
 		});
-		
+
 		// resize all the image lis before doing the scrollTo
 		var theWidth = $(window).width();
 		$('.elements li').css('width', theWidth);
-		
+
 		// swap the bottom section text
 		templateSwap(theIndex);
-		
+
 		// set current anchor class (for e.g. font-family)
 		$('.gotopane').removeClass('currentanchor');
 		$(this).addClass('currentanchor');
 		goToPane(theIndex);
-		
+
 	});
 
 	var theWidth = $(window).width();
@@ -137,14 +139,14 @@ $(function() {
 
 	var theHeight = $(window).height()/1.33;
 	$('.topsection').css('height', theHeight);
-	
-	
+
+
 	// show the likes modal when the image is clicked
 	$('.showlikes').click(function() {
 		var totalLikes = parseInt($('.likestemplates').attr('rel'), 10);
 
 		var likeNumber = parseInt($(this).attr('rel'), 10);
-		
+
 		// hide prev/next if we're at the end
 		if (likeNumber === 1) {
 			$('.prev').hide();
@@ -158,13 +160,13 @@ $(function() {
 		}
 		var initialLike = $('.likestemplates').find('div[rel=' + likeNumber + ']').clone();
 		// set the correc like template based on which book was clicked
-		
+
 		$('.inner').attr('rel', likeNumber).fadeTo(200,0, function() {
 			$('.inner').html(initialLike).fadeTo(200,1);
 			$('.modalwindow').stop().fadeTo(200,0.9);
 		});
 	});
-	
+
 	// remove the modal window when the close is clicked
 	$('.closebutton').click(function() {
 		$('.modalwindow').stop().fadeTo(200,0, function() {
@@ -172,7 +174,7 @@ $(function() {
 			$(this).hide();
 		});
 	});
-	
+
 	// previous and next buttons on modal
 	var totalLikes = parseInt($('.likestemplates').attr('rel'), 10);
 	// add in the likes text
@@ -194,7 +196,7 @@ $(function() {
 			$('.next').hide();
 		}
 	});
-	
+
 	$('.prev').click(function() {
 		// show the 'next' button if it's hidden
 		$('.next').show();
@@ -213,14 +215,14 @@ $(function() {
 			$('.prev').hide();
 		}
 	});
-	
+
 	// test if we're on a touchscreen device...
 	if(Modernizr.touch) {
 		// display the finger and white bg if we're on small screens
 		if($(window).width() < 768) {
 			$('.finger, .transparentwhite').addClass('withtouch');
 		}
-	
+
 		// swiping on the bottom section moves
 		// slides using TouchSwipe plugin
 		$('.bottomsection').swipe({
@@ -237,7 +239,7 @@ $(function() {
 		// if not -- add 'notouch' class to '.mobilearrows'
 		$('.mobilearrows').addClass('notouch');
 	}
-	
+
 	// set up breakpoints to e.g. fix 'likes' discrepancy
 	// when switching to/from mobile/desktop version
 	$(window).setBreakpoints({
@@ -262,7 +264,7 @@ $(function() {
 		tfbResize();
 	});
 	// orientation change logic
-	
+
 	$(window).bind( 'orientationchange', function(e){
 		// if it's small width and in portrait, hide the content
 		if($(window).width() < 650 && $(window).width() > $(window).height()) {
@@ -274,11 +276,11 @@ $(function() {
 			$('#maincontent').css('visibility', 'visible');
 		}
 		tfbReorient();
-		
+
 	});
-	
-	
-	
+
+
+
 	// swipe, yo!
 	window.mySwipe = new Swipe(document.getElementById('slider'), {
 		callback: function(index) {
@@ -295,7 +297,7 @@ $(function() {
 				templateSwap(index);
 				setCurrentAnchor(index);
 			}
-			
+
 			// show prev/next arrows...
 			$('.mobilenext, .mobileprev').fadeTo(200,1);
 			// but conditionally hide them if
@@ -305,22 +307,22 @@ $(function() {
 			}
 			if(index === 3) {
 				$('.mobilenext').fadeTo(200,0);
-			}			
+			}
 		},
 		continuous: false
 	});
-	
+
 	// go to first slide when logo clicked
 	$('.logo').click(function() {
 		window.mySwipe.slide(0, 500);
 		setCurrentAnchor(0);
 	});
-	
+
 	// go to next/prev slide when mobilearrows tapped
 	$('.mobilenext').click(function() {
 		window.mySwipe.next();
 	});
-	
+
 	$('.mobileprev').click(function() {
 		window.mySwipe.prev();
 	});
@@ -329,7 +331,7 @@ $(function() {
 
 // window load
 $(window).load(function() {
-	
+
 	// after two seconds, slide out the
 	// intro slide (if necessary)
 	setTimeout(function() {
@@ -337,7 +339,7 @@ $(window).load(function() {
 			slideOffIntro();
 		}
 	}, 3000);
-	
+
 	// after 4.5 seconds, fade
 	// out the overlay finger
 	setTimeout(function() {
