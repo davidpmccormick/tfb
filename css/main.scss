@@ -29,7 +29,7 @@ body {
 		padding: 0;
 	}
 }
-a:active, a:selected, a:visited { 
+a:active, a:selected, a:visited {
 	border: none;
 	outline: none;
 }
@@ -64,7 +64,6 @@ h4 {
 	@media (max-width: 480px) and (min-height: 500px) {
 		max-height: 350px;
 	}
-	@include transition(max-height 0.3s ease);
 	.logo {
 		position: absolute;
 		background: url('../assets/static/images/logo.png') no-repeat center center;
@@ -122,7 +121,7 @@ img.bgimage {
 		list-style: none;
 		li {
 			display: block;
-			
+
 			a {
 				color: $gray;
 				&:hover, &:active {
@@ -528,13 +527,13 @@ img {
 	left: 50%;
 	margin-left: -200px;
 
-	@media (min-width: 1200px) {
+	@media (min-width: 1200px) and (min-height: 790px) {
 		top: 100px;
 		width: 600px;
 		height: 700px;
 		margin-left: -300px;
 	}
-	
+
 	@media (max-width: 480px) {
 		top: 30px;
 		width: 250px;

@@ -13,7 +13,7 @@ function slideOffIntro() {
 $(function() {
 
 	// if we load in landscape on a small screen, encourage portrait viewing... only if the device can reorient
-	if(window.DeviceOrientationEvent) {
+	if(window.orientation) {
 		if($(window).width() < 650 && $(window).width() > $(window).height()) {
 			$('body').addClass('hiddencontent');
 			$('#maincontent').css('visibility', 'hidden');
