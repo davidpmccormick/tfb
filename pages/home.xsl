@@ -9,11 +9,11 @@
 	<div class="introimagecontainer start">
 		<div class="introimage"></div>
 	</div>
-	
-	
+
+
 	<section class="topsection clearfix relative">
 		<div class="transparentwhite"></div>
-		<div class="gotopane" rel="0" href="#0"><div class="logo" /></div>
+		<div class="gotopane" rel="0"><div class="logo" /></div>
 		<img class="bgimage" src="{$workspace}/assets/static/images/bg.png" alt="background" />
 		<div class="container">
 			<div class="row">
@@ -31,37 +31,37 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- smaller screen slides -->
 		<section class="sliderwrapper">
 			<div id="slider" class="theslider swipe visible-phone">
 			  <div class='swipe-wrap'>
-			    <div><img src="{$workspace}/assets/static/images/1.png" alt="" /></div>
-			    <div><img src="{$workspace}/assets/static/images/2.png" alt="" /></div>
-			    <div><img src="{$workspace}/assets/static/images/3.png" alt="" /></div>
-			    <div><img src="{$workspace}/assets/static/images/5.png" alt="" /></div>
+			    <div><img src="{$workspace}/assets/static/images/1.png" alt="shoes" /></div>
+			    <div><img src="{$workspace}/assets/static/images/2.png" alt="bowls" /></div>
+			    <div><img src="{$workspace}/assets/static/images/3.png" alt="media" /></div>
+			    <div><img src="{$workspace}/assets/static/images/5.png" alt="cups" /></div>
 			  </div>
 			</div>
 		</section>
 		<!-- end smaller screen slides -->
-		
+
 		<!-- larger screen slides -->
 		<section class="scrollcontainer hidden-phone-dmc" style="width:100%;">
 			<div class="pane" style="width:100%">
 				<ul class="elements clearfix" style="width:100000px">
-					<li class="currentimage"><img src="{$workspace}/assets/static/images/1.png" alt="" /></li>
-					<li><img src="{$workspace}/assets/static/images/2.png" alt="" /></li>
-					<li><img src="{$workspace}/assets/static/images/3.png" alt="" /></li>
-					
+					<li class="currentimage"><img src="{$workspace}/assets/static/images/1.png" alt="shoes" /></li>
+					<li><img src="{$workspace}/assets/static/images/2.png" alt="bowls" /></li>
+					<li><img src="{$workspace}/assets/static/images/3.png" alt="media" /></li>
+
 					<!-- likes section -->
 					<li class="relative">
-					
-						<div class="showlikes" rel="1"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
-						<div class="showlikes" rel="2"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
-						<div class="showlikes" rel="3"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
-						<div class="showlikes" rel="4"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
-						<div class="showlikes" rel="5"><img src="{$workspace}/assets/static/images/transparent.gif" /></div>
-						
+
+						<div class="showlikes" rel="1"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
+						<div class="showlikes" rel="2"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
+						<div class="showlikes" rel="3"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
+						<div class="showlikes" rel="4"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
+						<div class="showlikes" rel="5"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
+
 						<div class="modalwindow">
 							<div class="closebutton"></div>
 							<div class="prev"></div>
@@ -70,18 +70,18 @@
 								<!-- filled from likestemplates -->
 							</div>
 						</div>
-						<img src="{$workspace}/assets/static/images/4.png" alt="" />
+						<img src="{$workspace}/assets/static/images/4.png" alt="books" />
 					</li>
 					<!-- end likes -->
-					
-					<li><img src="{$workspace}/assets/static/images/5.png" alt="" /></li>
+
+					<li><img src="{$workspace}/assets/static/images/5.png" alt="cups" /></li>
 				</ul>
 			</div>
 		</section>
 		<!-- end larger screen slides -->
-		
+
 	</section>
-	
+
 	<section class="bottomsection clearfix">
 		<div class="hidden-phone" style="position: absolute; right:10px; top:15px;">
 			<a href="http://www.facebook.com/thefambiz" target="_blank"><span class="facebook"></span></a><br />
@@ -107,8 +107,8 @@
 			</div>
 		</div>
 	</section>
-	
-	
+
+
 	<section class="templates foldup">
 		<div rel="0" class="hometemplate">
 			<h4 class="visible-phone">Hello</h4>
@@ -130,16 +130,16 @@
 		<div rel="4" class="contacttemplate">
 			<h4 class="visible-phone">Contact</h4>
 			<xsl:copy-of select="text/entry/contact" />
-	
+
 			<div class="phonesocialmedia visible-phone">
 				<a href="http://www.facebook.com/thefambiz" target="_blank"><span class="facebook"></span></a>
 				<a href="http://www.twitter.com/thefambiz" target="_blank"><span class="twitter"></span></a>
 				<a href="http://www.instagram.com/thefambiz" target="_blank"><span class="instagram"></span></a>
-			</div>		
+			</div>
 
 		</div>
 	</section>
-	
+
 	<section class="likestemplates foldup" rel="5">
 		<!-- this rel = total templates, for JS -->
 		<div rel="1" class="likestemplate">

@@ -3,8 +3,6 @@
 
 <xsl:template name="page-title">
 	<xsl:value-of select="$website-name"/>
-	<xsl:text> &#8212; </xsl:text>
-	<xsl:value-of select="$page-title"/>
 </xsl:template>
 
 
