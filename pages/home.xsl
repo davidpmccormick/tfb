@@ -99,7 +99,7 @@
 						<div class="hometemplate">
 							<h4 class="visible-phone">Hello</h4>
 							<p><span class="visible-desktop visible-tablet">HELLO.</span></p>
-							<xsl:copy-of select="text/entry/home" />
+							<xsl:copy-of select="text/entry/home/*" />
 						</div>
 					</div>
 					<div class="finger"></div>
@@ -113,23 +113,23 @@
 		<div rel="0" class="hometemplate">
 			<h4 class="visible-phone">Hello</h4>
 			<p><span class="visible-desktop visible-tablet">HELLO.</span></p>
-			<xsl:copy-of select="text/entry/home" />
+			<xsl:copy-of select="text/entry/home/*" />
 		</div>
 		<div rel="1" class="abouttemplate">
 			<h4 class="visible-phone">About</h4>
-			<xsl:copy-of select="text/entry/about" />
+			<xsl:copy-of select="text/entry/about/*" />
 		</div>
 		<div rel="2" class="worktemplate">
 			<h4 class="visible-phone">Work</h4>
-			<xsl:copy-of select="text/entry/work" />
+			<xsl:copy-of select="text/entry/work/*" />
 		</div>
 		<div rel="3" class="likestemplate">
 			<h4 class="visible-phone">Likes</h4>
-			<xsl:copy-of select="text/entry/likes" />
+			<xsl:copy-of select="text/entry/likes/*" />
 		</div>
 		<div rel="4" class="contacttemplate">
 			<h4 class="visible-phone">Contact</h4>
-			<xsl:copy-of select="text/entry/contact" />
+			<xsl:copy-of select="text/entry/contact/*" />
 
 			<div class="phonesocialmedia visible-phone">
 				<a href="http://www.facebook.com/thefambiz" target="_blank"><span class="facebook"></span></a>
@@ -143,23 +143,23 @@
 	<section class="likestemplates foldup" rel="5">
 		<!-- this rel = total templates, for JS -->
 		<div rel="1" class="likestemplate">
-			<xsl:copy-of select="text/entry/juice" />
+			<xsl:copy-of select="text/entry/juice/*" />
 			<a href="{text/entry/juice-link}" target="_blank">View pictures</a>
 		</div>
 		<div rel="2" class="likestemplate">
-			<xsl:copy-of select="text/entry/nights-out" />
+			<xsl:copy-of select="text/entry/nights-out/*" />
 			<a href="{text/entry/nights-out-link}" target="_blank">View pictures</a>
 		</div>
 		<div rel="3" class="likestemplate">
-			<xsl:copy-of select="text/entry/dogs" />
+			<xsl:copy-of select="text/entry/dogs/*" />
 			<a href="{text/entry/dogs-link}" target="_blank">View pictures</a>
 		</div>
 		<div rel="4" class="likestemplate">
-			<xsl:copy-of select="text/entry/culinary-projects" />
+			<xsl:copy-of select="text/entry/culinary-projects/*" />
 			<a href="{text/entry/culinary-projects-link}" target="_blank">View pictures</a>
 		</div>
 		<div rel="5" class="likestemplate">
-			<xsl:copy-of select="text/entry/hiking" />
+			<xsl:copy-of select="text/entry/hiking/*" />
 			<a href="{text/entry/hiking-link}" target="_blank">View pictures</a>
 		</div>
 	</section>
