@@ -13,19 +13,19 @@
 
 	<section class="topsection clearfix relative">
 		<div class="transparentwhite"></div>
-		<div class="gotopane" rel="0"><div class="logo" /></div>
+		<div class="gotopane" data-rel="0"><div class="logo" /></div>
 		<img class="bgimage" src="{$workspace}/assets/static/images/bg.png" alt="background" />
 		<div class="container">
 			<div class="row">
 				<div class="span12">
 					<nav class="mainnav hidden-phone" style="position:relative;z-index:1;">
 						<ul class="leftnav">
-							<li><a class="gotopane" rel="1" href="#">About</a></li>
-							<li><a class="gotopane" rel="2" href="#">Work</a></li>
+							<li><a class="gotopane" data-rel="1" href="#">About</a></li>
+							<li><a class="gotopane" data-rel="2" href="#">Work</a></li>
 						</ul>
 						<ul class="rightnav">
-							<li><a class="gotopane" rel="3" href="#">Likes</a></li>
-							<li><a class="gotopane" rel="4" href="#">Contact</a></li>
+							<li><a class="gotopane" data-rel="3" href="#">Likes</a></li>
+							<li><a class="gotopane" data-rel="4" href="#">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -56,17 +56,17 @@
 					<!-- likes section -->
 					<li class="relative">
 
-						<div class="showlikes" rel="1"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
-						<div class="showlikes" rel="2"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
-						<div class="showlikes" rel="3"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
-						<div class="showlikes" rel="4"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
-						<div class="showlikes" rel="5"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
+						<div class="showlikes" data-rel="1"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
+						<div class="showlikes" data-rel="2"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
+						<div class="showlikes" data-rel="3"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
+						<div class="showlikes" data-rel="4"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
+						<div class="showlikes" data-rel="5"><img src="{$workspace}/assets/static/images/transparent.gif" alt="transparent gif" /></div>
 
 						<div class="modalwindow">
 							<div class="closebutton"></div>
 							<div class="prev"></div>
 							<div class="next"></div>
-							<div class="inner" rel="">
+							<div class="inner" data-rel="">
 								<!-- filled from likestemplates -->
 							</div>
 						</div>
@@ -110,24 +110,24 @@
 
 
 	<section class="templates foldup">
-		<div rel="0" class="hometemplate">
+		<div data-rel="0" class="hometemplate">
 			<h4 class="visible-phone">Hello</h4>
 			<p><span class="visible-desktop visible-tablet">HELLO.</span></p>
 			<xsl:copy-of select="text/entry/home/*" />
 		</div>
-		<div rel="1" class="abouttemplate">
+		<div data-rel="1" class="abouttemplate">
 			<h4 class="visible-phone">About</h4>
 			<xsl:copy-of select="text/entry/about/*" />
 		</div>
-		<div rel="2" class="worktemplate">
+		<div data-rel="2" class="worktemplate">
 			<h4 class="visible-phone">Work</h4>
 			<xsl:copy-of select="text/entry/work/*" />
 		</div>
-		<div rel="3" class="likestemplate">
+		<div data-rel="3" class="likestemplate">
 			<h4 class="visible-phone">Likes</h4>
 			<xsl:copy-of select="text/entry/likes/*" />
 		</div>
-		<div rel="4" class="contacttemplate">
+		<div data-rel="4" class="contacttemplate">
 			<h4 class="visible-phone">Contact</h4>
 			<xsl:copy-of select="text/entry/contact/*" />
 
@@ -140,25 +140,25 @@
 		</div>
 	</section>
 
-	<section class="likestemplates foldup" rel="5">
+	<section class="likestemplates foldup" data-rel="5">
 		<!-- this rel = total templates, for JS -->
-		<div rel="1" class="likestemplate">
+		<div data-rel="1" class="likestemplate">
 			<xsl:copy-of select="text/entry/juice/*" />
 			<a href="{text/entry/juice-link}" target="_blank">View pictures</a>
 		</div>
-		<div rel="2" class="likestemplate">
+		<div data-rel="2" class="likestemplate">
 			<xsl:copy-of select="text/entry/nights-out/*" />
 			<a href="{text/entry/nights-out-link}" target="_blank">View pictures</a>
 		</div>
-		<div rel="3" class="likestemplate">
+		<div data-rel="3" class="likestemplate">
 			<xsl:copy-of select="text/entry/dogs/*" />
 			<a href="{text/entry/dogs-link}" target="_blank">View pictures</a>
 		</div>
-		<div rel="4" class="likestemplate">
+		<div data-rel="4" class="likestemplate">
 			<xsl:copy-of select="text/entry/culinary-projects/*" />
 			<a href="{text/entry/culinary-projects-link}" target="_blank">View pictures</a>
 		</div>
-		<div rel="5" class="likestemplate">
+		<div data-rel="5" class="likestemplate">
 			<xsl:copy-of select="text/entry/hiking/*" />
 			<a href="{text/entry/hiking-link}" target="_blank">View pictures</a>
 		</div>

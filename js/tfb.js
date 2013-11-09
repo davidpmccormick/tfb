@@ -67,13 +67,13 @@ $(function() {
 	function templateSwap(index) {
 		// swap the bottom section text
 		$('.templateswap').stop().fadeTo(200,0, function() {
-			var newTemplate = $('.templates').find('div[rel=' + index + ']').clone();
+			var newTemplate = $('.templates').find('div[data-rel=' + index + ']').clone();
 			$('.templateswap').html(newTemplate).fadeTo(200,1);
 		});
 	}
 	function setCurrentAnchor(index) {
 		$('a.gotopane').removeClass('currentanchor');
-		$('a.gotopane[rel=' + index + ']').addClass('currentanchor');
+		$('a.gotopane[data-rel=' + index + ']').addClass('currentanchor');
 	}
 	function goToPane(index) {
 		$('.pane').stop().scrollTo( 'li:eq(' + index + ')', 800, {easing:'easeInOutCubic'} );
@@ -83,7 +83,7 @@ $(function() {
 	}
 
 	// make sure the intro image is loaded before it's faded up
-	var workspaceDir = $('body').attr('rel');
+	var workspaceDir = $('body').attr('data-rel');
 	$('<img/>').attr('src',  workspaceDir + '/assets/static/images/intro.png').load(function() {
 		$('.introimage').fadeTo(200,1);
 	});
@@ -93,7 +93,7 @@ $(function() {
 	});
 
 	$('.gotopane').click(function(){
-		var theIndex = parseInt($(this).attr('rel'),10);
+		var theIndex = parseInt($(this).attr('data-rel'),10);
 		// if the logo's out of shot, move it back in (not on small screens)
 		if(($('.logo').css('top') !== '15px') && ($(window).width() > 480) ) {
 			$('.logo').stop().animate({'top': '15px'}, 500);
@@ -143,9 +143,9 @@ $(function() {
 
 	// show the likes modal when the image is clicked
 	$('.showlikes').click(function() {
-		var totalLikes = parseInt($('.likestemplates').attr('rel'), 10);
+		var totalLikes = parseInt($('.likestemplates').attr('data-rel'), 10);
 
-		var likeNumber = parseInt($(this).attr('rel'), 10);
+		var likeNumber = parseInt($(this).attr('data-rel'), 10);
 
 		// hide prev/next if we're at the end
 		if (likeNumber === 1) {
@@ -158,10 +158,10 @@ $(function() {
 			$('.prev').show();
 			$('.next').show();
 		}
-		var initialLike = $('.likestemplates').find('div[rel=' + likeNumber + ']').clone();
+		var initialLike = $('.likestemplates').find('div[data-rel=' + likeNumber + ']').clone();
 		// set the correc like template based on which book was clicked
 
-		$('.inner').attr('rel', likeNumber).fadeTo(200,0, function() {
+		$('.inner').attr('data-rel', likeNumber).fadeTo(200,0, function() {
 			$('.inner').html(initialLike).fadeTo(200,1);
 			$('.modalwindow').stop().fadeTo(200,0.9);
 		});
@@ -176,20 +176,20 @@ $(function() {
 	});
 
 	// previous and next buttons on modal
-	var totalLikes = parseInt($('.likestemplates').attr('rel'), 10);
+	var totalLikes = parseInt($('.likestemplates').attr('data-rel'), 10);
 	// add in the likes text
 	$('.next').click(function() {
 		// show the 'prev' arrow if it's hidden
 		$('.prev').show();
-		var currentLikeIndex = $('.inner').attr('rel');
+		var currentLikeIndex = $('.inner').attr('data-rel');
 		var nextLikeIndex = parseInt(currentLikeIndex, 10) + 1;
 		// if we're not at the end of the list, go up
 		if (nextLikeIndex <= totalLikes) {
-			var nextLike = $('.likestemplates').find('div[rel=' + nextLikeIndex + ']').clone();
+			var nextLike = $('.likestemplates').find('div[data-rel=' + nextLikeIndex + ']').clone();
 			$('.inner').fadeTo(200, 0, function() {
 				$('.inner').html(nextLike).fadeTo(200,1);
 				// update the rel
-				$('.inner').attr('rel', nextLikeIndex);
+				$('.inner').attr('data-rel', nextLikeIndex);
 			});
 		}
 		if (nextLikeIndex === totalLikes) {
@@ -200,15 +200,15 @@ $(function() {
 	$('.prev').click(function() {
 		// show the 'next' button if it's hidden
 		$('.next').show();
-		var currentLikeIndex = $('.inner').attr('rel');
+		var currentLikeIndex = $('.inner').attr('data-rel');
 		var prevLikeIndex = parseInt(currentLikeIndex, 10) - 1;
 		// if we're not at the beginning of the list, go down
 		if (prevLikeIndex > 0) {
-			var prevLike = $('.likestemplates').find('div[rel=' + prevLikeIndex + ']').clone();
+			var prevLike = $('.likestemplates').find('div[data-rel=' + prevLikeIndex + ']').clone();
 			$('.inner').fadeTo(200, 0, function() {
 				$('.inner').html(prevLike).fadeTo(200,1);
 				// update the rel
-				$('.inner').attr('rel', prevLikeIndex);
+				$('.inner').attr('data-rel', prevLikeIndex);
 			});
 		}
 		if (prevLikeIndex === 1) {
