@@ -552,11 +552,11 @@ img {
 	// background: $orange;
 	// opacity: 0.2;
 
-	&[rel='1'] { left:40%; width:3.2%; }
-	&[rel='2'] { left:43.2%; width:5.5%; }
-	&[rel='3'] { left:48.7%; width:2%; }
-	&[rel='4'] { left:53.8%; width:2%; }
-	&[rel='5'] { left:55.8%; width:5%; }
+	&[data-rel='1'] { left:40%; width:3.2%; }
+	&[data-rel='2'] { left:43.2%; width:5.5%; }
+	&[data-rel='3'] { left:48.7%; width:2%; }
+	&[data-rel='4'] { left:53.8%; width:2%; }
+	&[data-rel='5'] { left:55.8%; width:5%; }
 }
 
 .showlikes img {
